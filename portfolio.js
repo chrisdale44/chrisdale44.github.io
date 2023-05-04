@@ -4,7 +4,7 @@ export const greetings = {
     name: 'Chris Dale',
     title: "Hi, I'm Chris",
     description:
-        "I'm a passionate and adaptable Front End Developer with over 10 years experience delivering Web Applications for corporate, public and charity sector clients.",
+        'A skilled Front End Developer with over 10 years experience delivering Web and Mobile solutions for corporate, public and charity sector clients.',
     resumeLink: '#',
 }
 
@@ -18,7 +18,6 @@ export const socialLinks = {
     url: 'https://chrisdale44.github.io/',
     linkedin: 'https://www.linkedin.com/in/chrisdale44/',
     github: 'https://github.com/chrisdale44',
-    instagram: 'https://www.instagram.com/vx.4000',
 }
 
 export const skillsSection = {
@@ -26,14 +25,28 @@ export const skillsSection = {
     subTitle: '',
     data: [
         {
-            title: 'Full Stack Development',
+            title: 'Front End Development',
             lottieAnimationFile: '/lottie/skills/skills.json',
             skills: [
-                emoji('⚡ Building responsive SPAs and PWAs using ReactJS'),
                 emoji(
-                    '⚡ Building serverless JAMStack websites using Static Site Generation (SSG) tools, including Gatsby and NextJS'
+                    '⚡ Write well-formed Javascript (ES7) following CS principles'
                 ),
-                emoji('⚡ Building RESTful APIs in NodeJS'),
+                emoji(
+                    '⚡ Build responsive, scalable and performant Web Applications using modern Javacsript frameworks, predominantly ReactJS'
+                ),
+                emoji(
+                    '⚡ Implement the latest architecture patterns for building Web solutions, including Serverless and JAMStack approaches'
+                ),
+                emoji(
+                    '⚡ Make decisions on which third-party software and tools to implement'
+                ),
+                emoji(
+                    '⚡ Write maintainable, cross-browser compliant CSS, using tools and frameworks such as SASS, CSS Modules and Styled Components'
+                ),
+                emoji(
+                    '⚡ Build front-end components that are fully compliant with Web Accessibility guidelines (WCAG 2.1)'
+                ),
+                emoji('⚡ Write clear and concise technical documentation'),
             ],
             softwareSkills: [
                 {
@@ -53,7 +66,7 @@ export const skillsSection = {
                     fontAwesomeClassname: 'logos:nodejs-icon',
                 },
                 {
-                    skillName: 'Reactjs',
+                    skillName: 'ReactJS',
                     fontAwesomeClassname: 'vscode-icons:file-type-reactjs',
                 },
                 {
@@ -61,7 +74,11 @@ export const skillsSection = {
                     fontAwesomeClassname: 'logos:redux',
                 },
                 {
-                    skillName: 'Nextjs',
+                    skillName: 'Recoil',
+                    fontAwesomeClassname: 'logos:recoil-icon',
+                },
+                {
+                    skillName: 'NextJS',
                     fontAwesomeClassname: 'vscode-icons:file-type-light-next',
                 },
                 {
@@ -73,68 +90,53 @@ export const skillsSection = {
                     fontAwesomeClassname: 'logos:contentful',
                 },
                 {
-                    skillName: 'GraphQl',
+                    skillName: 'GraphQL',
                     fontAwesomeClassname: 'vscode-icons:file-type-graphql',
                 },
                 {
+                    skillName: 'NPM',
+                    fontAwesomeClassname: 'logos:npm-icon',
+                },
+                // {
+                //     skillName: 'WCAG 21',
+                //     fontAwesomeClassname: 'logos:redux',
+                // },
+            ],
+        },
+        {
+            title: 'Quality Assurance',
+            lottieAnimationFile: '/lottie/qa.json',
+            skills: [
+                emoji(
+                    '⚡ Build React components with 100% unit test coverage using frameworks such as Jest and Enzyme'
+                ),
+                emoji(
+                    '⚡ Build UI design systems to view and test components in isolation using Storybook and Chromatic'
+                ),
+                emoji(
+                    '⚡ Test application performance and accessibility using tools such as Lighthouse and aXe'
+                ),
+            ],
+            softwareSkills: [
+                {
                     skillName: 'Jest',
                     fontAwesomeClassname: 'vscode-icons:file-type-jest',
+                },
+                {
+                    skillName: 'Enzyme',
+                    fontAwesomeClassname: 'logos:airbnb-icon',
                 },
                 {
                     skillName: 'Storybook',
                     fontAwesomeClassname: 'vscode-icons:file-type-storybook',
                 },
                 {
-                    skillName: 'NPM',
-                    fontAwesomeClassname: 'logos:npm-icon',
-                },
-            ],
-        },
-        {
-            title: 'Cloud Infra-Architecture',
-            lottieAnimationFile: '/lottie/skills/cloudinfra.json', // Path of Lottie Animation JSON File
-            skills: [
-                emoji('⚡ Experience working on multiple cloud platforms'),
-                emoji(
-                    '⚡ Hosting and maintaining websites on virtual machine instances along with integration of databases'
-                ),
-            ],
-            softwareSkills: [
-                {
-                    skillName: 'AWS',
-                    fontAwesomeClassname: 'logos:aws',
+                    skillName: 'Chromatic',
+                    fontAwesomeClassname: 'logos:chromatic-icon',
                 },
                 {
-                    skillName: 'Azure',
-                    fontAwesomeClassname: 'logos:microsoft-azure',
-                },
-                {
-                    skillName: 'Heroku',
-                    fontAwesomeClassname: 'logos:heroku-icon',
-                },
-                {
-                    skillName: 'Netlify',
-                    fontAwesomeClassname: 'vscode-icons:file-type-netlify',
-                },
-                {
-                    skillName: 'Github',
-                    fontAwesomeClassname: 'akar-icons:github-fill',
-                },
-                {
-                    skillName: 'Github Actions',
-                    fontAwesomeClassname: 'logos:github-actions',
-                },
-                {
-                    skillName: 'Docker',
-                    fontAwesomeClassname: 'logos:docker-icon',
-                },
-                {
-                    skillName: 'Cloudinary',
-                    fontAwesomeClassname: 'logos:cloudinary',
-                },
-                {
-                    skillName: 'Jira',
-                    fontAwesomeClassname: 'logos:jira',
+                    skillName: 'Lighthouse',
+                    fontAwesomeClassname: 'logos:lighthouse',
                 },
             ],
         },
@@ -185,7 +187,7 @@ export const experience = [
         ],
     },
     {
-        role: 'Associate Web Engineer',
+        role: 'Web Engineer',
         company: 'ASOS',
         companylogo: '/img/icons/common/asos.png',
         date: 'May 2017 – July 2019',
@@ -248,8 +250,8 @@ export const experience = [
 
 export const projects = [
     {
-        name: 'spot-mapper',
-        desc: 'Web App for documenting, mapping and filtering skateboard spots worldwide',
+        name: 'Spot Mapper',
+        desc: 'A performant and scalable Web App for saving, mapping and searching skateboard spots worldwide',
         github: 'https://github.com/chrisdale44/spot-mapper',
         link: '#',
     },

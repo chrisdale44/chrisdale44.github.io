@@ -1,3 +1,7 @@
 body > div:first-child {
-	overflow-x: hidden;
+    overflow-x: hidden;
+}
+
+#nav-title {
+    margin-bottom: -1rem;
 }
