@@ -230,7 +230,7 @@ export const experience = [
         ],
     },
     {
-        role: 'Junior Developer',
+        role: 'Junior Front End Developer',
         company: 'MyDeco',
         companylogo: '/img/icons/common/mydeco.png',
         date: 'Sep 2012 - May 2013',
