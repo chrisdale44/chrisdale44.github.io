@@ -7,24 +7,20 @@ import GreetingLottie from '../components/DisplayLottie'
 import SocialLinks from '../components/SocialLinks'
 
 const Greetings = () => {
+    const shapes = []
+    for (let i = 0; i <= 9; i++) {
+        shapes.push(<span />)
+    }
     useEffect(() => {
         document.documentElement.scrollTop = 0
         document.scrollingElement.scrollTop = 0
-    })
+    }, [])
     return (
         <main>
             <div className="position-relative">
                 <section className="section section-lg section-shaped pb-50">
                     <div className="shape shape-style-1 bg-gradient-info">
-                        <span />
-                        <span />
-                        <span />
-                        <span />
-                        <span />
-                        <span />
-                        <span />
-                        <span />
-                        <span />
+                        {shapes}
                     </div>
                     <Container className="py-lg-md d-flex">
                         <div className="col px-0">

@@ -250,7 +250,7 @@ export const experience = [
 export const projects = [
     {
         name: 'Spot Mapper',
-        desc: 'A performant and scalable Web App for saving, mapping and searching skateboard spots worldwide, still currently in development   ',
+        desc: 'A performant and scalable Web App for saving, mapping and searching skateboard spots worldwide, still currently in development',
         github: 'https://github.com/chrisdale44/spot-mapper',
         link: 'https://spot-mapper.vercel.app/',
     },
