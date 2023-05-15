@@ -26,7 +26,14 @@ const EducationCard = ({ education }) => {
                             <ul className="description">
                                 {education.descBullets
                                     ? education.descBullets.map((desc) => {
-                                          return <li key={desc}>{desc}</li>
+                                          return (
+                                              <li
+                                                  key={desc}
+                                                  dangerouslySetInnerHTML={{
+                                                      __html: desc,
+                                                  }}
+                                              />
+                                          )
                                       })
                                     : null}
                             </ul>
