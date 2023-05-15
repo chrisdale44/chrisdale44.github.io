@@ -164,11 +164,14 @@ export const educationInfo = [
     },
     {
         schoolName: 'Reigate Grammar School',
-        subHeader: 'A Levels',
+        subHeader: '',
         duration: '',
-        desc: 'Business Studies (A), Art (A), History (B)',
+        desc: '',
         grade: '',
-        descBullets: [],
+        descBullets: [
+            '<strong>A levels:</strong Business Studies (A), Art (A), History (B)',
+            "<strong>GCSE's:</strong> 10 subjects at A*, A and B grades",
+        ],
     },
 ]
 
