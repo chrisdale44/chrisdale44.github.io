@@ -232,9 +232,7 @@ export const experience = [
         companylogo: '/img/icons/common/mydeco.png',
         date: 'Sep 2012 - May 2013',
         desc: '',
-        descBullets: [
-            'Worked as part of an interdisciplinary team to build responsive web pages and email templates',
-        ],
+        descBullets: [],
     },
     {
         role: 'Junior Developer',
@@ -242,7 +240,7 @@ export const experience = [
         companylogo: '/img/icons/common/openbet.jpeg',
         date: 'Sep 2011 - May 2012',
         desc: '',
-        descBullets: ['Helped maintain the William Hill website'],
+        descBullets: [],
     },
 ]
 
