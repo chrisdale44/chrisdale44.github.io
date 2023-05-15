@@ -37,9 +37,7 @@ export const skillsSection = {
                 emoji(
                     '⚡ Make decisions on which third-party software and tools to use and implement them'
                 ),
-                emoji(
-                    '⚡ Write well-formed Javascript (ES7) following CS principles'
-                ),
+                emoji('⚡ Write well-formed code following CS principles'),
                 emoji(
                     '⚡ Write maintainable, cross-browser compliant CSS, using tools and frameworks such as SASS, CSS Modules and Styled Components'
                 ),
