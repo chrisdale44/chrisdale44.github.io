@@ -4,8 +4,8 @@ export const greetings = {
     name: 'Chris Dale',
     title: "Hi, I'm Chris",
     description:
-        'A skilled Front End Developer with over 10 years experience delivering Web and Mobile solutions for corporate, public and charity sector clients.',
-    resumeLink: '#',
+        'A skilled and adaptable Front End Developer with over 10 years experience delivering Web and Mobile solutions for corporate, public and charity sector clients. Currently seeking fully-remote opportunities.',
+    resumeLink: '/christopher-dale-cv-2023.pdf',
 }
 
 export const openSource = {
@@ -29,16 +29,16 @@ export const skillsSection = {
             lottieAnimationFile: '/lottie/skills/skills.json',
             skills: [
                 emoji(
-                    '⚡ Write well-formed Javascript (ES7) following CS principles'
-                ),
-                emoji(
                     '⚡ Build responsive, scalable and performant Web Applications using modern Javacsript frameworks, predominantly ReactJS'
                 ),
                 emoji(
                     '⚡ Implement the latest architecture patterns for building Web solutions, including Serverless and JAMStack approaches'
                 ),
                 emoji(
-                    '⚡ Make decisions on which third-party software and tools to implement'
+                    '⚡ Make decisions on which third-party software and tools to use and implement them'
+                ),
+                emoji(
+                    '⚡ Write well-formed Javascript (ES7) following CS principles'
                 ),
                 emoji(
                     '⚡ Write maintainable, cross-browser compliant CSS, using tools and frameworks such as SASS, CSS Modules and Styled Components'
@@ -116,6 +116,9 @@ export const skillsSection = {
                 emoji(
                     '⚡ Test application performance and accessibility using tools such as Lighthouse and aXe'
                 ),
+                emoji(
+                    '⚡ Ensure Web solutions work across all browsers and devices using tools such as BrowserStack and SauceLabs'
+                ),
             ],
             softwareSkills: [
                 {
@@ -173,66 +176,63 @@ export const educationInfo = [
 
 export const experience = [
     {
-        role: 'Senior Front End Developer',
+        role: 'Senior Front End Developer (Remote)',
         company: 'Shelter Charity',
         companylogo: '/img/icons/common/shelter.png',
-        date: 'July 2019 – Sept 2022',
+        date: 'July 2019 - Sept 2022',
         desc: '',
         descBullets: [
-            'Replatformed the Shelter website using React and JAMStack technologies',
-            'Built a custom NodeJS tool for scraping content from the legacy website to be migrated to the new CMS (Contentful)',
-            'Extended the functionality of Contentful, including schema generation',
-            'Championed accessibility, including the introduction of team accessibility guidelines',
-            'Line managed a junior developer with a focus on building their skills and confidence',
+            "Worked as part of a cross-functional, Agile product team to develop ideas and products to improve Shelters' services",
+            'Played a key part in replatforming the Shelter website using cutting edge technologies, with a focus on performance, usability and accessibility',
+            'Advised Shelter on the use of modern Web technologies and helped make decisions on which technologies to implement',
+            'Performed regular code reviews to ensure only code of the highest standard is deployed',
+            'Championed the push to meet Web accessibility standards (WCAG 2.1), including the introduction of team accessibility guidelines',
+            'Helped onboard and mentor newer members of staff, including pair programming sessions with developers of all standards',
+            'Line managed a junior member of the team with a focus on building their skills and confidence',
         ],
     },
     {
         role: 'Web Engineer',
         company: 'ASOS',
-        companylogo: '/img/icons/common/asos.png',
-        date: 'May 2017 – July 2019',
+        companylogo: '/img/icons/common/asos.svg',
+        date: 'May 2017 - July 2019',
         desc: '',
         descBullets: [
-            'Worked as part of a micro-services team to rebuild the ASOS website with a focus on quality assurance, performance and scalability',
-            'Re-architected one of ASOS’ NodeJS microservices',
+            'Worked as part of an Agile, micro-services team to rebuild the ASOS website using the latest Web technologies, with a focus on quality assurance, performance and scalability',
+            'Worked closely with UX, QA and product specialists to deliver fully tested features that meet functional and end-user requirements',
+            'Mentored junior developers and regularly pair programmed with developers of all standards in order to share knowledge and complete tasks more efficiently',
+            'Performed regular code reviews to ensure only code of the highest standard is deployed',
         ],
     },
     {
         role: 'Consultant Front End Developer',
-        company: 'Three',
-        companylogo: '/img/icons/common/three.png',
-        date: 'Sep 2016 – Mar 2017',
+        company: 'BAE Systems',
+        companylogo: '/img/icons/common/bae-systems.png',
+        date: 'Oct 2015 - Mar 2017',
         desc: '',
         descBullets: [
-            'Styled the UI for a newly replatformed Three Mobile blog microsite',
-        ],
-    },
-    {
-        role: 'Consultant Front End Developer',
-        company: 'Vodaphone',
-        companylogo: '/img/icons/common/vodafone.jpeg',
-        date: 'Oct 2015 – Sep 2016',
-        desc: '',
-        descBullets: [
-            'Led the development of a Web App to promote Vodafone products through a customer survey with interactive results page that was deployed across 20 of Vodafone’s international sites',
-            'Provided detailed documentation and presentations to Vodafone’s international teams',
+            'Worked with in-house and external client teams on the following projects:',
+            "<strong>Vodafone: </strong>Led the development of a Web App to promote Vodafone products that was deployed across 20 of Vodafone's international sites. Provided detailed documentation and presentations to Vodafone's international teams to aid them in deploying and customising the tool to their local markets",
+            '<strong>Royal Navy: </strong>Worked as part of a small team to build a cross-platform Web App to manage and track maritime engineering tasks, with a focus on security, reliability and offline availability',
+            '<strong>Three Mobile: </strong>Styled the UI for a newly replatformed Three Mobile blog microsite',
+            '<strong>Home Office: </strong>Styled the UI for Home Office webpages',
         ],
     },
     {
         role: 'Front End Developer',
         company: 'First Utility',
         companylogo: '/img/icons/common/first-utility.png',
-        date: 'June 2013 – Sept 2014',
+        date: 'June 2013 - Sept 2014',
         desc: '',
         descBullets: [
-            'Rebuilt the First Utility website and user account system, including interactive graphs of customer usage data',
+            'Worked as part of a small team to rebuild the First Utility website and user account system, including interactive graphs of customer usage data (winner of Utilities Website of the Year Award in 2014)',
         ],
     },
     {
         role: 'Junior Developer',
         company: 'MyDeco',
         companylogo: '/img/icons/common/mydeco.png',
-        date: 'Sep 2012 – May 2013',
+        date: 'Sep 2012 - May 2013',
         desc: '',
         descBullets: [
             'Worked as part of an interdisciplinary team to build responsive web pages and email templates',
@@ -242,7 +242,7 @@ export const experience = [
         role: 'Junior Developer',
         company: 'OpenBet',
         companylogo: '/img/icons/common/openbet.jpeg',
-        date: 'Sep 2011 – May 2012',
+        date: 'Sep 2011 - May 2012',
         desc: '',
         descBullets: ['Helped maintain the William Hill website'],
     },
@@ -253,7 +253,7 @@ export const projects = [
         name: 'Spot Mapper',
         desc: 'A performant and scalable Web App for saving, mapping and searching skateboard spots worldwide',
         github: 'https://github.com/chrisdale44/spot-mapper',
-        link: '#',
+        link: 'https://spot-mapper.vercel.app/',
     },
 ]
 
