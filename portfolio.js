@@ -169,7 +169,7 @@ export const educationInfo = [
         desc: '',
         grade: '',
         descBullets: [
-            '<strong>A levels:</strong Business Studies (A), Art (A), History (B)',
+            '<strong>A levels:</strong> Business Studies (A), Art (A), History (B)',
             "<strong>GCSE's:</strong> 10 subjects at A*, A and B grades",
         ],
     },
