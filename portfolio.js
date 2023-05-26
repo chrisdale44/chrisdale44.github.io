@@ -5,7 +5,7 @@ export const greetings = {
     title: "Hi, I'm Chris",
     description:
         'A skilled and adaptable Front End Developer with over 10 years experience delivering Web and Mobile solutions for corporate, public and charity sector clients. Currently seeking fully-remote opportunities.',
-    resumeLink: '/christopher-dale-cv-2023.pdf',
+    resumeLink: '/christopher-dale-cv.pdf',
 }
 
 export const openSource = {
