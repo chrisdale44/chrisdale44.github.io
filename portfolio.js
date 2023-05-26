@@ -4,7 +4,7 @@ export const greetings = {
     name: 'Chris Dale',
     title: "Hi, I'm Chris",
     description:
-        'A skilled and adaptable Front End Developer with over 10 years experience delivering Web and Mobile solutions for corporate, public and charity sector clients. Currently seeking fully-remote opportunities.',
+        'A skilled and adaptable Front End Developer with over 10 years experience in the industry, currently seeking fully-remote opportunities. ',
     resumeLink: '/christopher-dale-cv.pdf',
 }
 
@@ -181,15 +181,16 @@ export const experience = [
         company: 'Shelter Charity',
         companylogo: '/img/icons/common/shelter.png',
         date: 'July 2019 - Sept 2022',
-        desc: '',
+        desc: "UK's leading housing and homelessness charity",
         descBullets: [
-            "Worked as part of a cross-functional, Agile product team to develop ideas and products to improve Shelters' services",
-            'Played a key part in replatforming the Shelter website using cutting edge technologies, with a focus on performance, usability and accessibility',
-            'Advised Shelter on the use of modern Web technologies and helped make decisions on which technologies to implement',
-            'Performed regular code reviews to ensure only code of the highest standard is deployed',
-            'Championed the push to meet Web accessibility standards (WCAG 2.1), including the introduction of team accessibility guidelines',
-            'Helped onboard and mentor newer members of staff, including pair programming sessions with developers of all standards',
-            'Line managed a junior member of the team with a focus on building their skills and confidence',
+            'Worked as part of an interdisciplinary, Agile team to re-platform the Shelter website and CMS using latest Web technologies',
+            'Collaborated with the UX and design team to build a reusable Component Library with a focus on usability, accessibility and performance',
+            'Delivered clean, modular, unit-tested code both on the front-end and back-end',
+            'Performed regular code reviews to ensure code quality, maintainability and adherence to project requirements',
+            'Diagnosed and resolved technical issues, bugs and performance bottlenecks',
+            'Analysed existing team processes, identified areas for improvement and implemented strategies for more efficient workflows',
+            'Contributed to team technical documentation, including the introduction of team accessibility guidelines',
+            'Line-managed junior members of the team, conducting regular 1-2-1 meetings and upskilling them through pair programming sessions',
         ],
     },
     {
@@ -197,12 +198,13 @@ export const experience = [
         company: 'ASOS',
         companylogo: '/img/icons/common/asos.svg',
         date: 'May 2017 - July 2019',
-        desc: '',
+        desc: 'A leading online global fashion retailer, with over 20 million active users',
         descBullets: [
-            'Worked as part of an Agile, micro-services team to rebuild the ASOS website using the latest Web technologies, with a focus on quality assurance, performance and scalability',
-            'Worked closely with UX, QA and product specialists to deliver fully tested features that meet functional and end-user requirements',
+            'Worked as part of a cross-functional, Agile team to rebuild the ASOS website following a micro-services architecture, using the latest Web technologies',
+            'Collaborated with UX, QA and product specialists to deliver fully-tested features that met functional and end-user requirements',
+            'Delivered clean, modular and scalable code with 100% unit test coverage',
+            'Conducted regular code reviews to ensure code quality, maintainability and adherence to project requirements',
             'Mentored junior developers and regularly pair programmed with developers of all standards in order to share knowledge and complete tasks more efficiently',
-            'Performed regular code reviews to ensure only code of the highest standard is deployed',
         ],
     },
     {
@@ -210,13 +212,12 @@ export const experience = [
         company: 'BAE Systems',
         companylogo: '/img/icons/common/bae-systems.png',
         date: 'Oct 2015 - Mar 2017',
-        desc: '',
+        desc: 'A creative agency providing consulting services to corporate and governmental clients, of which I worked on the following projects:',
         descBullets: [
-            'Worked with in-house and external client teams on the following projects:',
-            "<strong>Vodafone: </strong>Led the development of a Web App to promote Vodafone products that was deployed across 20 of Vodafone's international sites. Provided detailed documentation and presentations to Vodafone's international teams to aid them in deploying and customising the tool to their local markets",
-            '<strong>Royal Navy: </strong>Worked as part of a small team to build a cross-platform Web App to manage and track maritime engineering tasks, with a focus on security, reliability and offline availability',
-            '<strong>Three Mobile: </strong>Styled the UI for a newly replatformed Three Mobile blog microsite',
-            '<strong>Home Office: </strong>Styled the UI for Home Office webpages',
+            "<strong>Vodafone: </strong>Led the development of a Web App to promote Vodafone products that was deployed across 20 of Vodafone's international sites. Provided documentation and presentations to client stakeholders and technical teams, to aid them in customising and deploying the tool to their local markets",
+            '<strong>Royal Navy: </strong>Worked as part of a small team to build a cross-platform Web App to manage and track engineering tasks, with a focus on security, reliability and offline availability',
+            '<strong>Three Mobile: </strong>Styled the UI for a newly re-platformed Three Mobile blog microsite',
+            '<strong>Home Office: </strong>Styled the UI for an internal-facing data entry portal',
         ],
     },
     {
@@ -226,7 +227,7 @@ export const experience = [
         date: 'June 2013 - Sept 2014',
         desc: '',
         descBullets: [
-            'Worked as part of a small team to rebuild the First Utility website and user account system, including interactive graphs of customer usage data (winner of Utilities Website of the Year Award in 2014)',
+            'Worked as part of a small team to rebuild the First Utility website with a focus on responsive design, including the development of interactive graphs of customer usage data (winner of Utilities Website of the Year Award, 2014)',
         ],
     },
     {
@@ -235,7 +236,7 @@ export const experience = [
         companylogo: '/img/icons/common/mydeco.png',
         date: 'Sep 2012 - May 2013',
         desc: '',
-        descBullets: [],
+        descBullets: ['Developed responsive Web pages and email templates'],
     },
     {
         role: 'Junior Developer',
@@ -243,16 +244,28 @@ export const experience = [
         companylogo: '/img/icons/common/openbet.jpeg',
         date: 'Sep 2011 - May 2012',
         desc: '',
-        descBullets: [],
+        descBullets: [
+            'Carried out maintenance tasks and bug fixes on enterprise-level front-end and back-end code ',
+        ],
+    },
+    {
+        role: 'Intern Developer',
+        company: 'Verve Media',
+        companylogo: '/img/icons/common/verve.jpeg',
+        date: 'Aug 2010',
+        desc: '',
+        descBullets: [
+            'Worked as part of a small team to deliver a fully functional and tested website that met the client requirements, within a tight deadline',
+        ],
     },
 ]
 
 export const projects = [
     {
-        name: 'Spot Mapper',
-        desc: 'A performant and scalable Web App for saving, mapping and searching skateboard spots worldwide, still currently in development',
-        github: 'https://github.com/chrisdale44/spot-mapper',
-        link: 'https://spot-mapper.vercel.app/',
+        name: 'Spot Library',
+        desc: 'A Web App for mapping skateboarding spots worldwide, built following a serverless approach with a focus on performance and scalability. As the solo developer of the project I have been responsible for each phase of the software development lifecycle from design and UX, to development, testing and deployment.',
+        github: 'https://github.com/chrisdale44/spot-library',
+        link: 'https://spot-library.vercel.app/',
     },
 ]
 
