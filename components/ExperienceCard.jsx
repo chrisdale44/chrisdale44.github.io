@@ -48,7 +48,7 @@ const ExperienceCard = ({ data }) => {
                         </CardTitle>
                         <p>
                             <strong>
-                                <a href="data.url">{data.friendly_url}</a>
+                                <a href={data.url}>{data.friendly_url}</a>
                             </strong>
                         </p>
                         <CardSubtitle tag="h5" className="mb-2">
