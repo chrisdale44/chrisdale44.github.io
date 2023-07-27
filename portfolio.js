@@ -293,7 +293,7 @@ export const showContactUs = false
 // See object prototype on SEO.jsx page
 export const seoData = {
     title: 'Chris Dale',
-    description: 'A passionate Front End Developer',
+    description: 'Front End Developer',
     author: 'Chris Dale',
     image: '/img/avatar.png',
     url: 'https://chrisdale44.github.io',
@@ -303,7 +303,6 @@ export const seoData = {
         'Dale',
         'Chris Dale',
         'chrisdale44',
-        'vx.4000',
         'Portfolio',
         'Front End Portfolio ',
         'Developer Portfolio',
