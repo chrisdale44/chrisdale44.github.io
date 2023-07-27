@@ -35,7 +35,7 @@ export const skillsSection = {
                     '⚡ Implement the latest architecture patterns for building Web solutions'
                 ),
                 emoji(
-                    '⚡ Write well-formed code that follow Web standards and CS principles'
+                    '⚡ Write well-formed code that follows Web standards and CS principles'
                 ),
                 emoji(
                     '⚡ Write maintainable, cross-browser compliant CSS styles'
