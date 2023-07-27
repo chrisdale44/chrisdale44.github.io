@@ -18,7 +18,7 @@ const Projects = () => {
                         </div>
                         <div className="pl-4">
                             <h4 className="display-3 text-info">
-                                Personal Projects
+                                Freelance Projects
                             </h4>
                         </div>
                     </div>

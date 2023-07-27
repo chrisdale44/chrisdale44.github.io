@@ -4,7 +4,7 @@ export const greetings = {
     name: 'Chris Dale',
     title: "Hi, I'm Chris",
     description:
-        'A skilled and adaptable Front End Developer with over 10 years experience in the industry, currently seeking fully-remote opportunities. ',
+        'A skilled and adaptable Front End Developer with over 10 years experience in the industry.',
     resumeLink: '/christopher-dale-cv.pdf',
 }
 
@@ -29,22 +29,20 @@ export const skillsSection = {
             lottieAnimationFile: '/lottie/skills/skills.json',
             skills: [
                 emoji(
-                    '⚡ Build responsive, scalable and performant Web Applications using modern Javacsript frameworks, predominantly ReactJS'
+                    '⚡ Build responsive, scalable and performant Web Applications using modern frameworks'
                 ),
                 emoji(
-                    '⚡ Implement the latest architecture patterns for building Web solutions, including Serverless and JAMStack approaches'
+                    '⚡ Implement the latest architecture patterns for building Web solutions'
                 ),
                 emoji(
-                    '⚡ Make decisions on which third-party software and tools to use and implement them'
-                ),
-                emoji('⚡ Write well-formed code following CS principles'),
-                emoji(
-                    '⚡ Write maintainable, cross-browser compliant CSS, using tools and frameworks such as SASS, CSS Modules and Styled Components'
+                    '⚡ Write well-formed code that follows Web standards and CS principles'
                 ),
                 emoji(
-                    '⚡ Build front-end components that are fully compliant with Web Accessibility guidelines (WCAG 2.1)'
+                    '⚡ Write maintainable, cross-browser compliant CSS styles'
                 ),
-                emoji('⚡ Write clear and concise technical documentation'),
+                emoji(
+                    '⚡ Provide quality assurance through unit tests and cross-browser testing'
+                ),
             ],
             softwareSkills: [
                 {
@@ -67,80 +65,80 @@ export const skillsSection = {
                     skillName: 'ReactJS',
                     fontAwesomeClassname: 'vscode-icons:file-type-reactjs',
                 },
-                {
-                    skillName: 'Redux',
-                    fontAwesomeClassname: 'logos:redux',
-                },
-                {
-                    skillName: 'Recoil',
-                    fontAwesomeClassname: 'logos:recoil-icon',
-                },
+                // {
+                //     skillName: 'Redux',
+                //     fontAwesomeClassname: 'logos:redux',
+                // },
+                // {
+                //     skillName: 'Recoil',
+                //     fontAwesomeClassname: 'logos:recoil-icon',
+                // },
                 {
                     skillName: 'NextJS',
                     fontAwesomeClassname: 'vscode-icons:file-type-light-next',
                 },
-                {
-                    skillName: 'Gatsby',
-                    fontAwesomeClassname: 'vscode-icons:file-type-gatsby',
-                },
-                {
-                    skillName: 'Contentful',
-                    fontAwesomeClassname: 'logos:contentful',
-                },
-                {
-                    skillName: 'GraphQL',
-                    fontAwesomeClassname: 'vscode-icons:file-type-graphql',
-                },
-                {
-                    skillName: 'NPM',
-                    fontAwesomeClassname: 'logos:npm-icon',
-                },
+                // {
+                //     skillName: 'Gatsby',
+                //     fontAwesomeClassname: 'vscode-icons:file-type-gatsby',
+                // },
+                // {
+                //     skillName: 'Contentful',
+                //     fontAwesomeClassname: 'logos:contentful',
+                // },
+                // {
+                //     skillName: 'GraphQL',
+                //     fontAwesomeClassname: 'vscode-icons:file-type-graphql',
+                // },
+                // {
+                //     skillName: 'NPM',
+                //     fontAwesomeClassname: 'logos:npm-icon',
+                // },
                 // {
                 //     skillName: 'WCAG 21',
                 //     fontAwesomeClassname: 'logos:redux',
                 // },
             ],
         },
-        {
-            title: 'Quality Assurance',
-            lottieAnimationFile: '/lottie/qa.json',
-            skills: [
-                emoji(
-                    '⚡ Build React components with 100% unit test coverage using frameworks such as Jest and Enzyme'
-                ),
-                emoji(
-                    '⚡ Build UI design systems to view and test components in isolation using Storybook and Chromatic'
-                ),
-                emoji(
-                    '⚡ Test application performance and accessibility using tools such as Lighthouse and aXe'
-                ),
-                emoji(
-                    '⚡ Ensure Web solutions work across all browsers and devices using tools such as BrowserStack and SauceLabs'
-                ),
-            ],
-            softwareSkills: [
-                {
-                    skillName: 'Jest',
-                    fontAwesomeClassname: 'vscode-icons:file-type-jest',
-                },
-                {
-                    skillName: 'Enzyme',
-                    fontAwesomeClassname: 'logos:airbnb-icon',
-                },
-                {
-                    skillName: 'Storybook',
-                    fontAwesomeClassname: 'vscode-icons:file-type-storybook',
-                },
-                {
-                    skillName: 'Chromatic',
-                    fontAwesomeClassname: 'logos:chromatic-icon',
-                },
-                {
-                    skillName: 'Lighthouse',
-                    fontAwesomeClassname: 'logos:lighthouse',
-                },
-            ],
-        },
+        // {
+        //     title: 'Quality Assurance',
+        //     lottieAnimationFile: '/lottie/qa.json',
+        //     skills: [
+        //         emoji(
+        //             '⚡ Build React components with 100% unit test coverage using frameworks such as Jest and Enzyme'
+        //         ),
+        //         emoji(
+        //             '⚡ Build UI design systems to view and test components in isolation using Storybook and Chromatic'
+        //         ),
+        //         emoji(
+        //             '⚡ Test application performance and accessibility using tools such as Lighthouse and aXe'
+        //         ),
+        //         emoji(
+        //             '⚡ Ensure Web solutions work across all browsers and devices using tools such as BrowserStack and SauceLabs'
+        //         ),
+        //     ],
+        //     softwareSkills: [
+        //         {
+        //             skillName: 'Jest',
+        //             fontAwesomeClassname: 'vscode-icons:file-type-jest',
+        //         },
+        //         {
+        //             skillName: 'Enzyme',
+        //             fontAwesomeClassname: 'logos:airbnb-icon',
+        //         },
+        //         {
+        //             skillName: 'Storybook',
+        //             fontAwesomeClassname: 'vscode-icons:file-type-storybook',
+        //         },
+        //         {
+        //             skillName: 'Chromatic',
+        //             fontAwesomeClassname: 'logos:chromatic-icon',
+        //         },
+        //         {
+        //             skillName: 'Lighthouse',
+        //             fontAwesomeClassname: 'logos:lighthouse',
+        //         },
+        //     ],
+        // },
     ],
 }
 
@@ -154,31 +152,36 @@ export const SkillBars = [
 export const educationInfo = [
     {
         schoolName: 'University of Southampton',
-        subHeader: 'Information Technology in Organisations, BSc.',
-        duration: 'September 2008 - April 2011',
-        desc: 'A multi-faceted degree covering modules in Computer Science, Information Technology, statistics, ethics and business management; of which I specialised in Web technologies.',
-        grade: 'First Class with Honours',
-        descBullets: [
-            'For my dissertation I built a Web App for a client, completing all stages of the development lifecycle from requirements gathering to design, development, testing and deployment.',
-        ],
-    },
-    {
-        schoolName: 'Reigate Grammar School',
-        subHeader: '',
-        duration: '',
+        subHeader: 'IT in Organisations, BSc.',
+        duration: ', 2011',
         desc: '',
-        grade: '',
-        descBullets: [
-            '<strong>A levels:</strong> Business Studies (A), Art (A), History (B)',
-            "<strong>GCSE's:</strong> 10 subjects at A*, A and B grades",
-        ],
+        grade: 'First Class with Honours',
     },
+    // {
+    //     schoolName: 'Reigate Grammar School',
+    //     subHeader: '',
+    //     duration: '',
+    //     desc: '',
+    //     grade: '',
+    //     descBullets: [
+    //         {
+    //             qualification: 'A Levels',
+    //             grade: 'Business Studies (A), Art (A), History (B)',
+    //         },
+    //         {
+    //             qualification: "GCSE's",
+    //             grade: '10 subjects at A*, A and B grades',
+    //         },
+    //     ],
+    // },
 ]
 
 export const experience = [
     {
         role: 'Senior Front End Developer (Remote)',
         company: 'Shelter Charity',
+        url: 'https://england.shelter.org.uk/',
+        friendly_url: 'www.shelter.org.uk',
         companylogo: '/img/icons/common/shelter.png',
         date: 'July 2019 - Sept 2022',
         desc: "UK's leading housing and homelessness charity",
@@ -196,6 +199,8 @@ export const experience = [
     {
         role: 'Web Engineer',
         company: 'ASOS',
+        url: 'https://www.asos.com/?',
+        friendly_url: 'www.asos.com',
         companylogo: '/img/icons/common/asos.svg',
         date: 'May 2017 - July 2019',
         desc: 'A leading online global fashion retailer, with over 20 million active users',
@@ -261,17 +266,29 @@ export const experience = [
 ]
 
 export const projects = [
+    // {
+    //     name: 'Spot Library',
+    //     desc: 'A Web App for mapping skateboarding spots worldwide, built following a serverless approach with a focus on performance and scalability. As the solo developer of the project I have been responsible for each phase of the software development lifecycle from design and UX, to development, testing and deployment.',
+    //     github: 'https://github.com/chrisdale44/spot-library',
+    //     link: 'https://spot-library.vercel.app/',
+    // },
     {
-        name: 'Spot Library',
-        desc: 'A Web App for mapping skateboarding spots worldwide, built following a serverless approach with a focus on performance and scalability. As the solo developer of the project I have been responsible for each phase of the software development lifecycle from design and UX, to development, testing and deployment.',
-        github: 'https://github.com/chrisdale44/spot-library',
-        link: 'https://spot-library.vercel.app/',
+        name: 'Renewal Ease',
+        image: '/img/icons/common/re.png',
+        desc: 'A website with customer management portal, for onboarding customers, taking payments and uploading documents. An automated process on the backend uses AI to scan documents uploaded and extract relevant data',
+    },
+    {
+        name: "Prints 'n' Photos",
+        url: 'https://printsnphotos.com/',
+        friendly_url: 'www.printsnphotos.com',
+        image: '/img/icons/common/pnp.png',
+        desc: 'A website with content management system, built for a client to be able to display and easily edit his collection of limited edition etchings, prints and fine art photographs for private sales',
     },
 ]
 
 export const feedbacks = []
 
-export const showContactUs = true
+export const showContactUs = false
 
 // See object prototype on SEO.jsx page
 export const seoData = {

@@ -13,30 +13,30 @@ const EducationCard = ({ education }) => {
                             <h5 className="text-info">
                                 {education.schoolName}
                             </h5>
-                            <h6>{education.subHeader}</h6>
-                            <Badge color="info" className="mr-1">
+                            <h6>
+                                {education.subHeader}
                                 {education.duration}
-                            </Badge>
+                            </h6>
+
                             {education.grade && (
-                                <Badge color="primary" className="mr-1">
-                                    {education.grade}
-                                </Badge>
+                                <strong>{education.grade}</strong>
                             )}
                             <p className="description mt-3">{education.desc}</p>
-                            <ul className="description">
-                                {education.descBullets
-                                    ? education.descBullets.map((desc) => {
+
+                            {education.descBullets
+                                ? education.descBullets.map(
+                                      ({ qualification, grade }, i) => {
                                           return (
-                                              <li
-                                                  key={desc}
-                                                  dangerouslySetInnerHTML={{
-                                                      __html: desc,
-                                                  }}
-                                              />
+                                              <div key={i}>
+                                                  <strong>
+                                                      {qualification}
+                                                  </strong>
+                                                  <p>{grade}</p>
+                                              </div>
                                           )
-                                      })
-                                    : null}
-                            </ul>
+                                      }
+                                  )
+                                : null}
                         </div>
                     </div>
                 </CardBody>
