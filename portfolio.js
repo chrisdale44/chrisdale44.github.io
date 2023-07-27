@@ -295,7 +295,7 @@ export const seoData = {
     title: 'Chris Dale',
     description: 'Front End Developer',
     author: 'Chris Dale',
-    image: '/avatar.png',
+    image: 'https://chrisdale44.github.io/avatar.png',
     url: 'https://chrisdale44.github.io',
     keywords: [
         'Chris',
