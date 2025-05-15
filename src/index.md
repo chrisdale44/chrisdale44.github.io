@@ -8,7 +8,7 @@ layout: layouts/base.njk
     <h1 class="pacifico text-white text-4xl p-4">Christopher Dale - Portfolio</h1>
     </div>
     <div class="p-8 flex justify-center text-[#333]">
-        <div class="max-w-[480px]">
+        <div class="max-w-[560px]">
             <section>
             <h2 class='font-bold pb-2 font-lg'>Profile</h2>
             <div class="px-4">
@@ -18,29 +18,29 @@ layout: layouts/base.njk
             </div>
             <section>
             <h2 class='font-bold pt-4 pb-4 font-lg text-[#333]'>Projects</h2>
-            <div class="px-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="px-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <a href="/spot-hub"  class="block rounded [box-shadow:rgba(0,_0,_0,_0.7)_0px_1px_4px_-1px] overflow-hidden p-4 hover:opacity-70">
-                    <img src="/assets/spot-hub-main.jpg" alt="Spot Hub" class="rounded">
+                    <img src="/assets/spot-hub/main.jpg" alt="Spot Hub" class="rounded">
                     <p class='text-xs text-italic text-[#666] text-center pt-2 italic'>Spot Hub | 2025</p>
                 </a>
                 <a href="/shelter"  class="block rounded [box-shadow:rgba(0,_0,_0,_0.7)_0px_1px_4px_-1px] overflow-hidden p-4 hover:opacity-70">
-                    <img src="/assets/spot-hub-main.jpg" alt="Spot Hub" class="rounded">
+                    <img src="/assets/shelter/main.jpg" alt="Shelter" class="rounded">
                     <p class='text-xs text-italic text-[#666] text-center pt-2 italic'>Shelter | 2020</p>
                 </a>
                 <a href="/asos"  class="block rounded [box-shadow:rgba(0,_0,_0,_0.7)_0px_1px_4px_-1px] overflow-hidden p-4 hover:opacity-70">
-                    <img src="/assets/spot-hub-main.jpg" alt="Spot Hub" class="rounded">
+                    <img src="/assets/asos/main.jpg" alt="Asos" class="rounded">
                     <p class='text-xs text-italic text-[#666] text-center pt-2 italic'>Asos | 2018</p>
                 </a>
                 <a href="/vodafone"  class="block rounded [box-shadow:rgba(0,_0,_0,_0.7)_0px_1px_4px_-1px] overflow-hidden p-4 hover:opacity-70">
-                    <img src="/assets/spot-hub-main.jpg" alt="Spot Hub" class="rounded">
-                    <p class='text-xs text-italic text-[#666] text-center pt-2 italic'>Vodafone | 2016</p>
+                    <img src="/assets/ready-business/main.jpg" alt="Ready Business" class="rounded">
+                    <p class='text-xs text-italic text-[#666] text-center pt-2 italic'>Vodafone: Ready Business | 2016</p>
                 </a>
                 <a href="/first-utility"  class="block rounded [box-shadow:rgba(0,_0,_0,_0.7)_0px_1px_4px_-1px] overflow-hidden p-4 hover:opacity-70">
-                    <img src="/assets/spot-hub-main.jpg" alt="Spot Hub" class="rounded">
+                    <img src="/assets/first-utility/main.jpg" alt="First Utility" class="rounded">
                     <p class='text-xs text-italic text-[#666] text-center pt-2 italic'>First Utility | 2014</p>
                 </a>
                 <a href="/printsnphotos"  class="block rounded [box-shadow:rgba(0,_0,_0,_0.7)_0px_1px_4px_-1px] overflow-hidden p-4 hover:opacity-70">
-                    <img src="/assets/spot-hub-main.jpg" alt="Spot Hub" class="rounded">
+                    <img src="/assets/printsnphotos/main.jpg" alt="Prints 'n' Photos" class="rounded">
                     <p class='text-xs text-italic text-[#666] text-center pt-2 italic'>Prints'n'photos | 2011</p>
                 </a>
             </div>
