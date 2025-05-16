@@ -4,7 +4,7 @@ layout: layouts/base.njk
 ---
 
 <div
-  class="flex flex-col items-center text-md bg-white border-none focus:outline-none [box-shadow:rgba(0,_0,_0,_0.3)_0px_1px_4px_-1px] rounded min-w-[480px]"
+  class="flex flex-col items-center text-md bg-white border-none focus:outline-none [box-shadow:rgba(0,_0,_0,_0.3)_0px_1px_4px_-1px] rounded min-w-[360px]"
 >
   <div class="bg-[#157] flex align-center justify-center text-center w-full">
     <a href="https://spot-hub.app" target="_blank"
