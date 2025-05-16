@@ -3,7 +3,7 @@ title: Christopher Dale Portfolio
 layout: layouts/base.njk
 ---
 
-<div class="flex flex-col items-center text-md bg-white border-none focus:outline-none [box-shadow:rgba(0,_0,_0,_0.3)_0px_1px_4px_-1px] rounded min-w-[340px] overflow-hidden">
+<div class="flex flex-col items-center text-md bg-white border-none focus:outline-none [box-shadow:rgba(0,_0,_0,_0.3)_0px_1px_4px_-1px] rounded min-w-[340px] overflow-hidden text-[#333]">
     <div class="bg-[#157] flex align-center justify-center text-center w-full">
         <h1 class="pacifico text-white text-2xl sm:text-4xl p-4">Shelter - Website Rebuild</h1>
     </div>
@@ -20,26 +20,57 @@ layout: layouts/base.njk
             </div>
         </div>
     </section>
-        <section class="flex justify-center pb-8">
-            <div class="max-w-[480px]">
-                <p class="pb-4">UK’s leading housing and homelessness charity, with over 7 million site visits annually.</p>
-                <li>Worked as part of an interdisciplinary Agile team to re-platform the Shelter website
-                and CMS using latest technologies, following a JAMStack architecture</li>
-                <li>Worked closely with the UX and design team to build a reusable component library
-                to be used across the new site, prioritising usability and accessibility</li>
-                <li>Delivered clean, modular, unit-tested code both on the front-end and back-end</li>
-                <li>Performed regular code reviews to uphold coding standards, optimise
-                maintainability, and ensure alignment with project specifications</li>
-                <li>Analysed existing team processes, identified areas for improvement and
-                implemented strategies for more efficient workflows, including the introduction of
-                an improved code review process</li>
-                <li>Contributed to team technical documentation, including the introduction of team
-                accessibility guidelines </li>
-                <li>Line-managed a junior member of the team, holding regular 1-2-1 meetings and
-                developing their skills through pair programming sessions</li>
+    <section class="flex justify-center pb-8">
+    <div class="max-w-[560px]">
+        <h2 class="font-bold pb-2 text-lg">Technologies</h2>
+        <div class="px-4">
+        <ul class="columns-2 sm:columns-3 gap-4 list-disc text-xs pb-4 pl-4">
+            <li>Javascript</li>
+            <li>NodeJS</li>
+            <li>React</li>
+            <li>Gatsby (SSG)</li>
+            <li>Contentful</li>
+            <li>GraphQL</li>
+            <li>Styled Components</li>
+            <li>pa11y</li>
+            <li>Storybook</li>
+            <li>Jest + Enzyme</li>
+            <li>Google Tag Manager</li>
+            <li>CircleCI</li>
+            <li>Github</li>
+            <li>Github Actions</li>
+            <li>Figma</li>
+            <li>Jira</li>
+            <li>Confluence</li>
+        </ul>
+        </div>
+            <h2 class="font-bold pb-2 text-lg">Experience</h2>
+            <div class="px-4 text-xs">
+                <p class="pb-2">Worked as part of an interdisciplinary Agile team to re-platform the Shelter website and CMS using latest technologies, following a JAMStack architecture</p>
+                <ul class="list-disc pl-4">
+                <li>
+                Worked closely with the UX and design team to build a reusable component library, prioritising usability and accessibility
+                </li>
+                <li>
+                Built new website features and responsive layouts, delivering clean, modular, unit-tested code both on the front-end and back-end
+                </li>
+                <li>
+                Championed accessibility compliance, including the introduction of team accessibility guidelines and automated accessibility testing
+                </li>
+                <li>
+                Analysed team processes and implemented strategies for improved workflows, including the introduction of automated tools to assign and remind developers of code review duties, reducing code review bottlenecks, accelerating task completion times and enhancing overall delivery efficiency
+                </li>
+                <li>
+                Line-managed a junior member of the team, holding regular one-to-one meetings and developing their skills through pair programming sessions
+                </li>
+                <li>
+                Upheld coding standards and codebase maintainability through regular code reviews and contributions to team documentation
+                </li>
+                </ul>
+                </div>
             </div>
     </section>
-    
+
 </div>
 
 </div>
