@@ -5,10 +5,10 @@ layout: layouts/base.njk
 
 <div class="flex flex-col items-center text-md bg-white border-none focus:outline-none [box-shadow:rgba(0,_0,_0,_0.3)_0px_1px_4px_-1px] rounded min-w-[340px] overflow-hidden">
     <div class="bg-[#157] flex align-center justify-center text-center w-full">
-    <h1 class="pacifico text-white text-2xl sm:text-4xl p-4">ASOS - Website Rebuild</h1>
+    <h1 class="pacifico text-white text-2xl sm:text-4xl p-4">ASOS</h1>
     </div>
-    <div class="p-8 flex justify-center text-[#333]">
-        <section>
+    <div class="p-8 text-[#333] ">
+        <section class="flex justify-center">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-8">
                 <div>
                     <img src="/assets/asos/old.jpg" alt="Asos Old Website" class="rounded">
@@ -20,8 +20,34 @@ layout: layouts/base.njk
                 </div>
             </div>
         </section>
-        <section>
-            <div class="max-w-[480px]">
+        <section class="flex justify-center">
+        <div class="max-w-[560px]">
+            <h2 class="font-bold pb-2 text-lg">Technologies</h2>
+            <div class="px-4">
+                <ul class="columns-2 sm:columns-3 gap-4 list-disc text-xs pb-4 pl-4">
+                    <li>Javascript</li>
+                    <li>NodeJS</li>
+                    <li>React</li>
+                    <li>Redux</li>
+                    <li>Styled Components</li>
+                    <li>Jest + Enzyme</li>
+                    <li>CircleCI</li>
+                    <li>Github</li>
+                    <li>Figma</li>
+                    <li>Jira</li>
+                    <li>Confluence</li>
+                </ul>
+                <h2 class="font-bold pb-2 text-lg">Experience</h2>
+                <div class="px-4 text-xs">
+                    <p class="pb-2">A leading online global fashion retailer with over 20 million active users</p>
+                    <ul class="list-disc pl-4">
+                        <li>Worked as part of a cross-functional Agile team to rebuild the ASOS website using the latest Web technologies, following a micro-services architecture</li>
+                        <li>Collaborated with UX, QA and product specialists to deliver fully-tested features that met functional and end-user requirements</li>
+                        <li>Delivered clean, modular and scalable unit-tested code</li>
+                        <li>Conducted regular code reviews to ensure code quality, maintainability and adherence to project requirements</li>
+                        <li>Mentored junior developers and regularly pair programmed with developers of all standards to aid in knowledge sharing and efficient task completion</li>
+                    </ul>
+                </div>
             </div>
         </section>
     </div>

@@ -13,6 +13,27 @@ layout: layouts/base.njk
                 <div>
                     <!-- <img src="/assets/ready-business/steps.jpg" alt="Ready Business Workflow" class="rounded">
                     <p class='text-xs text-italic text-[#666] text-center pt-2 italic'>Steps</p> -->
+                    <h2 class="font-bold pb-2 text-lg">Technologies</h2>
+                    <div class="px-4">
+                        <ul class="columns-2 sm:columns-3 gap-4 list-disc text-xs pb-4 pl-4">
+                            <li>Javascript</li>
+                            <li>D3</li>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Survey Monkey</li>
+                        </ul>
+                    </div>
+                    <h2 class="font-bold pb-2 text-lg">Experience</h2>
+                    <div class="px-4 text-xs">
+                        <ul class="list-disc pl-4">
+                            <li>
+                            Led the development of a Web application to promote Vodafone B2B products through a series of business related survey questions followed by a dynamic results page, including data visualisation charts
+                            </li>
+                            <li>
+                            Produced comprehensive documentation and trained client stakeholders to customise and deploy the tool to their local markets, enabling successful rollout across 20 international Vodafone websites
+                            </li>
+                        </ul>
+                    </div>
                 </div>
                 <div>
                     <img src="/assets/ready-business/full-report.jpg" alt="Ready Business Full Report" class="rounded">
