@@ -62,9 +62,9 @@
           </h2>
           <p class="text-gray-700 mb-4 text-sm">
             Designed to fill a gap in the action sports community, Spot Hub enables 
-            users to discover action sports locations and street obstacles around 
+            users to discover spots and street obstacles around 
             the world, and document the history of tricks performed at
-            each spot. With a functional MVP version currently in alpha
+            each location. With a functional MVP version currently in alpha
             release phase, the app is slated for public release later this year,
             with additional features and improvements to be rolled out
             iteratively.
@@ -183,10 +183,9 @@
       </h2>
       <h3 class="text-xl font-semibold mt-6 mb-3">WebGL</h3>
       <p class="mb-4">
-        Many JavaScript map libraries use DOM nodes to render map layers, such
-        as map pins. However, this approach lacks scalability as maps with
-        thousands of pins will suffer from sluggish performance. Instead, Spot
-        Hub uses DeckGL, a WebGL library that leverages GPU acceleration for
+        In order for Spot Hub to handle large numbers of map pins while maintaining smooth, 
+        lag-free movement and scrolling around the map, the DeckGL library has been implemented.
+        DeckGL is a WebGL-powered library that leverages GPU acceleration for
         significantly faster rendering and smoother interactivity, resulting in
         a highly scalable map pin layer.
       </p>
