@@ -21,14 +21,14 @@ layout: layouts/base.njk
       <div class="flex-1">
         <section class="text-sm">
           <h2 class="text-md font-bold mb-4 pb-2">
-            A Progressive Web App for mapping skateboarding spots and
-            skateboarding media across the globe
+            A Progressive Web App designed to map action sports locations and 
+            user-generated media on a global scale
           </h2>
           <p class="text-gray-700 mb-4 text-sm">
-            Designed to fill a gap in the skateboarding community, Spot Hub is a
-            personal project designed to enable users to discover skateboard spots and street
-            obstacles worldwide, and document the history of tricks performed at
-            each location. With a functional MVP version currently in alpha
+            Designed to fill a gap in the action sports community, Spot Hub enables 
+            users to discover action sports locations and street obstacles around 
+            the world, and document the history of tricks performed at
+            each spot. With a functional MVP version currently in alpha
             release phase, the app is slated for public release later this year,
             with additional features and improvements to be rolled out
             iteratively.
@@ -147,10 +147,9 @@ layout: layouts/base.njk
       </h2>
       <h3 class="text-xl font-semibold mt-6 mb-3">WebGL</h3>
       <p class="mb-4">
-        Many JavaScript map libraries use DOM nodes to render map layers, such
-        as map pins. However, this approach lacks scalability as maps with
-        thousands of pins will suffer from sluggish performance. Instead, Spot
-        Hub uses DeckGL, a WebGL library that leverages GPU acceleration for
+        In order for Spot Hub to handle large numbers of map pins while maintaining smooth, 
+        lag-free movement and scrolling around the map, the DeckGL library has been implemented.
+        DeckGL is a WebGL-powered library that leverages GPU acceleration for
         significantly faster rendering and smoother interactivity, resulting in
         a highly scalable map pin layer.
       </p>
@@ -367,8 +366,7 @@ layout: layouts/base.njk
           local-first database syncing
         </li>
         <li>
-          <strong>JSDoc</strong> or <strong>TypeScript</strong> for type
-          checking as the app grows in complexity
+          <strong><strong>TypeScript</strong> for type safety and improved developer experience
         </li>
         <li>
           <strong>Remix</strong> or <strong>Waku</strong> as a more performant
