@@ -569,11 +569,11 @@ layout: layouts/base.njk
   .exp-link:hover { opacity: 0.6; }
   .exp-project-img {
     width: 100%;
-    max-width: 360px;
+    padding: 1rem 2rem;
     aspect-ratio: 16/9;
     object-fit: cover;
     margin-top: 1.2rem;
-    opacity: 0.85;
+    {# opacity: 0.85; #}
   }
 
   @media (max-width: 860px) {
@@ -883,7 +883,7 @@ layout: layouts/base.njk
         <div class="about-text">
           <p>Full stack engineer with 8+ years' experience, specialising in front-end development and delivering high-performance web applications. I've worked across scale-ups and non-profits — from rebuilding ASOS's platform for 20 million users to co-developing Shelter's design system — always focused on clean, accessible, and scalable solutions.</p>
           <p>Outside of the day job I'm the founder of <strong>Nth Dimension Labs</strong>, an entrepreneurial venture studio where I independently design, architect and ship products from scratch. My flagship project is <strong>Crust Central</strong>, a full-stack PWA for the global skateboarding community.</p>
-          <p>When I'm not writing code I'm behind a camera — shooting skateboard photography, videography, and film. My work is shaped by movement, contrast, and the raw culture of skateboarding.</p>
+          <p>When I'm not writing code I'm behind a camera — shooting skateboard photography and videography. My work is shaped by movement, contrast, and the raw culture of skateboarding.</p>
         </div>
       </div>
     </div>
@@ -894,7 +894,6 @@ layout: layouts/base.njk
 <section id="skills" data-theme="light">
   <div class="section-inner">
     <div class="skills-header">
-      <p class="section-tag fade-in">The Craft</p>
       <h2 class="section-heading fade-in delay-1">Engineering Across the Stack.</h2>
     </div>
     <div class="skills-columns">
@@ -907,17 +906,17 @@ layout: layouts/base.njk
               <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
             </div>
             <div class="skill-bar-item" style="--bar-width:67%">
-              <div class="skill-bar-header"><span class="skill-bar-name">JavaScript</span><span class="skill-bar-years">10+ yrs</span></div>
+              <div class="skill-bar-header"><span class="skill-bar-name">JavaScript / NodeJS</span><span class="skill-bar-years">10+ yrs</span></div>
               <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
             </div>
             <div class="skill-bar-item" style="--bar-width:53%">
               <div class="skill-bar-header"><span class="skill-bar-name">React</span><span class="skill-bar-years">8+ yrs</span></div>
               <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
             </div>
-            <div class="skill-bar-item" style="--bar-width:53%">
+            {# <div class="skill-bar-item" style="--bar-width:53%">
               <div class="skill-bar-header"><span class="skill-bar-name">Node.js</span><span class="skill-bar-years">8+ yrs</span></div>
               <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
-            </div>
+            </div> #}
             <div class="skill-bar-item" style="--bar-width:53%">
               <div class="skill-bar-header"><span class="skill-bar-name">Jest / Vitest</span><span class="skill-bar-years">8+ yrs</span></div>
               <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
@@ -934,14 +933,7 @@ layout: layouts/base.njk
               <div class="skill-bar-header"><span class="skill-bar-name">Jotai</span><span class="skill-bar-years">4+ yrs</span></div>
               <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="fade-in delay-2">
-        <div class="skills-group">
-          <p class="skills-group-title">Further Skills</p>
-          <div class="skill-bar-list">
+            
             <div class="skill-bar-item" style="--bar-width:20%">
               <div class="skill-bar-header"><span class="skill-bar-name">Redux</span><span class="skill-bar-years">3+ yrs</span></div>
               <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
@@ -964,25 +956,24 @@ layout: layouts/base.njk
             </div>
           </div>
         </div>
+      </div>
+
+      <div class="fade-in delay-2">
         <div class="skills-group fade-in delay-3">
-          <p class="skills-group-title">Ecosystem</p>
+          <p class="skills-group-title">Further Skills</p>
           <div class="skills-tags">
             <span class="skill-tag">GraphQL</span>
             <span class="skill-tag">REST APIs</span>
             <span class="skill-tag">GitHub Actions</span>
             <span class="skill-tag">Supabase</span>
-            <span class="skill-tag">Redis</span>
             <span class="skill-tag">Deck.gl / MapLibre</span>
             <span class="skill-tag">D3.js</span>
             <span class="skill-tag">WebGL</span>
             <span class="skill-tag">Contentful CMS</span>
             <span class="skill-tag">Storybook</span>
-            <span class="skill-tag">ShadCN</span>
             <span class="skill-tag">Cloudinary</span>
             <span class="skill-tag">DexieJS</span>
-            <span class="skill-tag">Service Workers</span>
             <span class="skill-tag">A11y (WCAG 2.1)</span>
-            <span class="skill-tag">Netlify</span>
           </div>
         </div>
       </div>
@@ -994,13 +985,15 @@ layout: layouts/base.njk
 <section id="projects" data-theme="dark">
   <div class="section-inner">
     <p class="section-tag fade-in">Nth Dimension Labs</p>
-    <h2 class="section-heading fade-in delay-1">Building products<br><em style="font-family:var(--font-serif);font-style:italic;">from scratch.</em></h2>
+    <h2 class="section-heading fade-in delay-1">Building Products from Scratch.</h2>
 
     <div class="project-featured">
       <div class="project-featured-text fade-in delay-1">
         <p class="project-kicker">Featured project · 2024–Present</p>
         <h3 class="project-name">Crust Central</h3>
-        <p class="project-desc">A full-stack Progressive Web App for discovering, cataloguing and sharing skateboarding spots worldwide. Users explore an interactive WebGL map, browse a media feed, submit their own spots, and compete on a leaderboard — all with offline-first performance.</p>
+        <p class="project-desc">A Progressive Web App for discovering, cataloguing and sharing skateboarding spots worldwide. Users explore an interactive WebGL map, browse a media feed, submit their own spots, and compete on a leaderboard — all with offline-first performance.</p>
+        <p class="project-desc">Independently responsible for the full software development lifecycle — from architecture and database design to CI/CD, hosting, and product iteration informed by user feedback.</p>
+        
         <div class="project-stats">
           <div>
             <span class="stat-value">PWA</span>
@@ -1012,39 +1005,45 @@ layout: layouts/base.njk
           </div>
           <div>
             <span class="stat-value">AI</span>
-            <span class="stat-label">Tag Suggestions</span>
+            <span class="stat-label">Integration</span>
           </div>
           <div>
             <span class="stat-value">PostGIS</span>
             <span class="stat-label">Spatial Database</span>
           </div>
         </div>
-        <p class="project-desc">Independently responsible for the full software development lifecycle — from architecture and database design to CI/CD, hosting, and product iteration informed by user feedback.</p>
-        <a href="https://crustcentral.com" target="_blank" rel="noopener noreferrer" class="btn btn-light">Visit Crust Central ↗</a>
         <div class="tech-tags">
-          <span class="tech-tag">Next.js 15</span>
+          <span class="tech-tag">Next.JS</span>
           <span class="tech-tag">Supabase + PostGIS</span>
-          <span class="tech-tag">Deck.gl / MapLibre</span>
+          <span class="tech-tag">Deck.gl</span>
+          <span class="tech-tag">MapLibre</span>
           <span class="tech-tag">Jotai</span>
-          <span class="tech-tag">Tailwind + ShadCN</span>
+          <span class="tech-tag">Tailwind</span>
+          <span class="tech-tag">ShadCN</span>
           <span class="tech-tag">Gemini AI</span>
-          <span class="tech-tag">Redis</span>
           <span class="tech-tag">IndexedDB</span>
           <span class="tech-tag">Cloudinary</span>
+          <span class="tech-tag">Cloudflare</span>
+          <span class="tech-tag">Upstash</span>
+          <span class="tech-tag">Netlify</span>
+          <span class="tech-tag">GitHub Actions</span>
+          <span class="tech-tag">PostHog</span>
         </div>
       </div>
-      <div class="fade-in delay-2">
-        <img src="/assets/spot-hub/main.jpg" alt="Crust Central app screenshot" class="project-image" />
-        <img src="/assets/spot-hub/main-mobile.png" alt="Crust Central mobile" class="project-image" style="margin-top:0.75rem;aspect-ratio:16/6;" />
+      <div class="fade-in delay-2" style="display:flex;flex-direction:column;align-items:center;">
+        <a href="https://crustcentral.com" target="_blank" rel="noopener noreferrer"><img src="/assets/spot-hub/main.jpg" alt="Crust Central app screenshot" class="project-image" /></a>
+        <a href="https://crustcentral.com" target="_blank" rel="noopener noreferrer" class="btn btn-light" style="margin-top:0.75rem;">Visit Crust Central ↗</a>
       </div>
     </div>
 
     <div class="ventures-grid">
-      <div class="venture-card fade-in delay-1">
+      <div class="venture-card fade-in delay-1" style="display:flex; gap:1.5rem; align-items:flex-start;">
         <img src="/assets/nth-dimension.jpg" alt="Nth Dimension Labs" style="width:80px;height:80px;object-fit:cover;margin-bottom:1.2rem;opacity:0.9;" />
-        <h4 class="venture-title">Nth Dimension Labs</h4>
-        <p class="venture-desc">An entrepreneurial venture studio for building digital products that sit at the intersection of technology, creativity, and community. Founded in 2024.</p>
-        <p style="font-size:0.7rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;opacity:0.4;">Founder &amp; Developer</p>
+        <div>
+            <h4 class="venture-title">Nth Dimension Labs</h4>
+            <p class="venture-desc">An entrepreneurial venture studio for building digital products. Founded in 2025.</p>
+            <p style="font-size:0.7rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;opacity:0.4;">Founder &amp; Developer</p>
+        </div>
       </div>
       <div class="venture-card fade-in delay-2">
         <h4 class="venture-title">Open to Collaborations</h4>
@@ -1058,8 +1057,8 @@ layout: layouts/base.njk
 <!-- ─── EXPERIENCE ────────────────────────────────── -->
 <section id="experience" data-theme="light">
   <div class="section-inner">
-    <p class="section-tag fade-in">Professional Work</p>
-    <h2 class="section-heading fade-in delay-1">Years of Delivered Products.</h2>
+    {# <p class="section-tag fade-in">Professional Work</p> #}
+    <h2 class="section-heading fade-in delay-1">Professional Experience</h2>
 
     <div class="exp-grid">
       <nav class="exp-nav fade-in" aria-label="Experience navigation">
@@ -1088,7 +1087,7 @@ layout: layouts/base.njk
             <li>Line managed and mentored junior team members via pair programming and regular 1:1s.</li>
           </ul>
           <img src="/assets/shelter/main.jpg" alt="Shelter website" class="exp-project-img" />
-          <a href="/shelter" class="exp-link">View case study →</a>
+          <a href="/shelter" class="exp-link">Read more →</a>
         </div>
 
         <div class="exp-item fade-in" id="exp-asos">
@@ -1103,7 +1102,7 @@ layout: layouts/base.njk
             <li>Followed TDD practices, delivered clean unit-tested code and mentored junior engineers via pair programming.</li>
           </ul>
           <img src="/assets/asos/main.jpg" alt="ASOS website" class="exp-project-img" />
-          <a href="/asos" class="exp-link">View case study →</a>
+          <a href="/asos" class="exp-link">Read more →</a>
         </div>
 
         <div class="exp-item fade-in" id="exp-bae">
@@ -1117,7 +1116,7 @@ layout: layouts/base.njk
             <li>Took end-to-end ownership of a data visualisation project, enabling rollout across 20 international markets with full documentation and stakeholder training.</li>
           </ul>
           <img src="/assets/ready-business/main.jpg" alt="Vodafone Ready Business" class="exp-project-img" />
-          <a href="/vodafone" class="exp-link">View case study →</a>
+          <a href="/vodafone" class="exp-link">Read more →</a>
         </div>
 
         <div class="exp-item fade-in" id="exp-firstutility">
@@ -1131,7 +1130,7 @@ layout: layouts/base.njk
             <li>Converted wireframes into fully-responsive web pages and led data visualisation projects using D3.js and Highcharts.</li>
           </ul>
           <img src="/assets/first-utility/main.jpg" alt="First Utility website" class="exp-project-img" />
-          <a href="/first-utility" class="exp-link">View case study →</a>
+          <a href="/first-utility" class="exp-link">Read more →</a>
         </div>
 
         <div class="exp-item fade-in" id="exp-mydeco">
@@ -1160,15 +1159,18 @@ layout: layouts/base.njk
   </div>
 </section>
 
+<!-- ─── EDUCATION ───────────────────────────────── -->
+
+
 <!-- ─── PHOTOGRAPHY ───────────────────────────────── -->
 <section id="photography" data-theme="dark">
   <div class="section-inner">
     <div class="photo-header">
       <div>
-        <p class="section-tag fade-in">Visual Arts</p>
-        <h2 class="section-heading fade-in delay-1">Capturing<br>the Culture.</h2>
+        {# <p class="section-tag fade-in">Skateboard photography</p> #}
+        <h2 class="section-heading fade-in delay-1">Film &amp; Photography</h2>
       </div>
-      <a href="/photography" class="btn btn-light fade-in delay-2" style="align-self:center;">Enter Full Gallery ↗</a>
+      <a href="/photography" class="btn btn-light fade-in delay-2" style="align-self:center;">View Full Gallery ↗</a>
     </div>
 
     <div class="photo-grid fade-in">
@@ -1213,8 +1215,8 @@ layout: layouts/base.njk
     <div class="photo-credits fade-in">
       <p class="photo-credits-title">Published In</p>
       <div class="photo-credits-list">
-        <span class="photo-credit-tag">Grey Magazine</span>
         <span class="photo-credit-tag">Skateboarders Companion</span>
+        <span class="photo-credit-tag">Grey Magazine</span>
         <span class="photo-credit-tag">Slam Magazine</span>
         <span class="photo-credit-tag">Damn Magazine</span>
         <span class="photo-credit-tag">Backside Magazine</span>
@@ -1226,17 +1228,17 @@ layout: layouts/base.njk
     <div class="video-section fade-in">
       <div class="video-section-header">
         <div>
-          <p class="section-tag" style="opacity:0.4;">Film &amp; Video</p>
-          <h3 class="video-section-title">Watch the Footage.</h3>
+          <p class="section-tag" style="opacity:0.4;">Videography</p>
+          {# <h3 class="video-section-title">Watch the Footage.</h3> #}
         </div>
-        <a href="https://www.youtube.com/@vx.4000" target="_blank" rel="noopener noreferrer" class="btn btn-light" style="font-size:0.68rem;padding:0.65rem 1.3rem;">Subscribe on YouTube ↗</a>
+        {# <a href="https://www.youtube.com/@vx.4000" target="_blank" rel="noopener noreferrer" class="btn btn-light" style="font-size:0.68rem;padding:0.65rem 1.3rem;">Subscribe on YouTube ↗</a> #}
       </div>
       <div class="video-grid">
         <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/dtIeS8onYXw" title="Skate video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://www.youtube.com/embed/SCOBB4M7kZ8" title="Skate video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
         </div>
         <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/SCOBB4M7kZ8" title="Skate video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://www.youtube.com/embed/dtIeS8onYXw" title="Skate video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
         </div>
         <div class="video-embed">
           <iframe src="https://www.youtube.com/embed/LPtJfccSNCU" title="Skate video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
@@ -1251,7 +1253,7 @@ layout: layouts/base.njk
   <div class="section-inner">
     <div class="cv-inner">
       <div class="cv-text fade-in">
-        <p class="section-tag">Credentials</p>
+        {# <p class="section-tag">Credentials</p> #}
         <h2 class="section-heading">Download my CV.</h2>
         <p>Eight years of professional experience building high-performance web applications. University of Southampton, BSc Information Technology — First Class Honours.</p>
       </div>
