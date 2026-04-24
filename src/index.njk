@@ -1,5 +1,5 @@
 ---
-title: Christopher Dale — Full Stack Engineer & Photographer
+title: Christopher Dale · Full Stack Engineer & Photographer
 layout: layouts/base.njk
 ---
 
@@ -71,15 +71,28 @@ layout: layouts/base.njk
     border: none;
     cursor: pointer;
     color: inherit;
-    padding: 4px;
+    padding: 8px;
+    z-index: 101;
+    position: relative;
   }
   .nav-mobile-toggle span {
     display: block;
-    width: 22px;
+    width: 24px;
     height: 2px;
     background: currentColor;
     margin: 5px 0;
-    transition: all 0.3s;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+  }
+  .nav-mobile-toggle[aria-expanded="true"] span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-mobile-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .nav-mobile-toggle[aria-expanded="true"] span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
   }
 
   .mobile-overlay {
@@ -87,17 +100,18 @@ layout: layouts/base.njk
     position: fixed;
     inset: 0;
     background: var(--dark);
-    z-index: 98;
+    z-index: 99;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 2.5rem;
+    padding: 2rem;
   }
   .mobile-overlay.open { display: flex; }
   .mobile-overlay a {
-    font-size: 1.1rem;
+    font-size: 1.3rem;
     font-weight: 500;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
     text-decoration: none;
     color: rgba(255,255,255,0.85);
@@ -545,11 +559,14 @@ layout: layouts/base.njk
     position: relative;
   }
   .exp-bullets li::before {
-    content: '—';
+    content: '';
     position: absolute;
     left: 0;
-    color: var(--muted);
-    font-size: 0.8rem;
+    top: 0.7em;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: var(--muted);
   }
   .exp-link {
     display: inline-flex;
@@ -587,7 +604,6 @@ layout: layouts/base.njk
     padding: 7rem 0;
   }
   .edu-grid {
-    margin-top: 4rem;
     display: flex;
     flex-direction: column;
   }
@@ -599,7 +615,6 @@ layout: layouts/base.njk
     gap: 3rem;
     align-items: start;
   }
-  .edu-item:first-child { border-top: 1px solid var(--border); }
   .edu-institution {
     font-family: var(--font-serif);
     font-size: 1.35rem;
@@ -859,7 +874,7 @@ layout: layouts/base.njk
       <p class="hero-eyebrow fade-in">Portfolio</p>
       <h1 class="hero-name fade-in delay-1">Christopher<br>Dale</h1>
       <p class="hero-title fade-in delay-2">Full Stack Engineer · Photographer · Founder</p>
-      <p class="hero-bio fade-in delay-3">Based in London. I build high-performance web applications and capture the world through a lens — driven by code, creativity and the culture of skateboarding.</p>
+      <p class="hero-bio fade-in delay-3">Based in London. I build high-performance web applications and capture the world through a lens, driven by code, creativity and the culture of skateboarding.</p>
       <div class="fade-in delay-4" style="display:flex;gap:1rem;flex-wrap:wrap;">
         <a href="#projects" class="btn">Explore Work</a>
         <a href="#contact" class="btn" style="background:transparent;">Get in Touch</a>
@@ -877,13 +892,13 @@ layout: layouts/base.njk
     <div class="about-grid">
       <div class="fade-in">
         <p class="section-tag">The person</p>
-        <h2 class="about-quote">Drawn to clean code, creative problems, and the raw culture of skateboarding.</h2>
+        <h2 class="about-quote">Clean code, creative problems, and the spirit of skateboarding.</h2>
       </div>
       <div class="fade-in delay-2">
         <div class="about-text">
-          <p>Full stack engineer with 8+ years' experience, specialising in front-end development and delivering high-performance web applications. I've worked across scale-ups and non-profits — from rebuilding ASOS's platform for 20 million users to co-developing Shelter's design system — always focused on clean, accessible, and scalable solutions.</p>
+          <p>Full stack engineer with 8+ years' experience, specialising in front-end development and delivering high-performance web applications. I've worked across scale-ups and non-profits, from rebuilding ASOS's platform for 20 million users to co-developing Shelter's design system, always focused on clean, accessible, and scalable solutions.</p>
           <p>Outside of the day job I'm the founder of <strong>Nth Dimension Labs</strong>, an entrepreneurial venture studio where I independently design, architect and ship products from scratch. My flagship project is <strong>Crust Central</strong>, a full-stack PWA for the global skateboarding community.</p>
-          <p>When I'm not writing code I'm behind a camera — shooting skateboard photography and videography. My work is shaped by movement, contrast, and the raw culture of skateboarding.</p>
+          <p>When I'm not writing code I'm behind a camera, shooting skateboard photography and videography. My work is shaped by movement, contrast, and a lifelong love of skating.</p>
         </div>
       </div>
     </div>
@@ -964,6 +979,7 @@ layout: layouts/base.njk
           <div class="skills-tags">
             <span class="skill-tag">GraphQL</span>
             <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">PWA / Service Workers</span>
             <span class="skill-tag">GitHub Actions</span>
             <span class="skill-tag">Supabase</span>
             <span class="skill-tag">Deck.gl / MapLibre</span>
@@ -991,8 +1007,9 @@ layout: layouts/base.njk
       <div class="project-featured-text fade-in delay-1">
         <p class="project-kicker">Featured project · 2023–Present</p>
         <h3 class="project-name">Crust Central</h3>
-        <p class="project-desc">A Progressive Web App for discovering, cataloguing and sharing skateboarding spots worldwide. Users explore an interactive WebGL map, browse a media feed, submit their own spots, and compete on a leaderboard — all with offline-first performance.</p>
-        <p class="project-desc">Independently responsible for the full software development lifecycle — from architecture and database design to CI/CD, hosting, and product iteration informed by user feedback.</p>
+        <p class="project-desc">A Progressive Web App for discovering, cataloguing and sharing skateboarding spots worldwide. Users explore an interactive WebGL map, browse a media feed, submit their own spots, and compete on a leaderboard, all with offline-first performance.</p>
+        <p class="project-desc">Independently responsible for the full software development lifecycle, from architecture and database design to CI/CD, hosting, and product iteration informed by user feedback.</p>
+        <a href="/crust-central" class="exp-link" style="color:rgba(240,236,228,0.85);border-bottom-color:rgba(240,236,228,0.5);">Read More →</a>
         
         <div class="project-stats">
           <div>
@@ -1032,7 +1049,9 @@ layout: layouts/base.njk
       </div>
       <div class="fade-in delay-2" style="display:flex;flex-direction:column;align-items:center;">
         <a href="https://crustcentral.com" target="_blank" rel="noopener noreferrer"><img src="/assets/spot-hub/main.jpg" alt="Crust Central app screenshot" class="project-image" /></a>
-        <a href="https://crustcentral.com" target="_blank" rel="noopener noreferrer" class="btn btn-light" style="margin-top:0.75rem;">Visit Crust Central ↗</a>
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.75rem;">
+          <a href="https://crustcentral.com" target="_blank" rel="noopener noreferrer" class="btn btn-light">Visit Crust Central ↗</a>
+        </div>
       </div>
     </div>
 
@@ -1077,7 +1096,7 @@ layout: layouts/base.njk
           <div class="exp-meta">
             <span class="exp-company">Shelter</span>
             <span class="exp-role">Senior Front End Engineer</span>
-            <span class="exp-date">July 2019 — Sept 2022</span>
+      <span class="exp-date">July 2019 — Sept 2022</span>
           </div>
           <ul class="exp-bullets">
             <li>Worked in a distributed, cross-functional Agile team to replatform Shelter's website, delivering faster page load times for over 7 million annual visitors.</li>
@@ -1160,17 +1179,40 @@ layout: layouts/base.njk
 </section>
 
 <!-- ─── EDUCATION ───────────────────────────────── -->
-
-
-<!-- ─── PHOTOGRAPHY ───────────────────────────────── -->
+<section id="education" data-theme="light">
+  <div class="section-inner">
+    <h2 class="section-heading fade-in delay-1">Education</h2>
+    <div class="edu-grid">
+      <div class="edu-item fade-in">
+        <div class="edu-left">
+          <span class="edu-institution">University of Southampton</span>
+          <span class="edu-date">2008 &ndash; 2011</span>
+          <span class="edu-degree">BSc Information Technology in Organisations</span>
+          <span class="edu-grade">First Class Honours</span>
+        </div>
+        <div class="edu-right">
+          <p class="section-tag" style="margin-bottom:0.8rem;">Dissertation Project</p>
+          <p style="font-family:var(--font-serif);font-size:1.3rem;margin-bottom:0.8rem;">printsnphotos.com</p>
+          <ul class="exp-bullets">
+            <li>Built a full-stack gallery website for a private fine art collector, handling all phases of the Web Development Lifecycle: requirements gathering, UI/UX design, development, testing, and A/B testing.</li>
+            <li>Commended for clean, user-focused design and end-to-end ownership from brief to delivery.</li>
+          </ul>
+          <img src="/assets/printsnphotos/main.jpg" alt="printsnphotos.com" class="exp-project-img" />
+          <a href="/printsnphotos" class="exp-link">Read more &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <section id="photography" data-theme="dark">
   <div class="section-inner">
     <div class="photo-header">
       <div>
         {# <p class="section-tag fade-in">Skateboard photography</p> #}
         <h2 class="section-heading fade-in delay-1">Film &amp; Photography</h2>
+        <p class="fade-in delay-2" style="font-size:0.82rem;opacity:0.45;margin-top:0.8rem;letter-spacing:0.04em;">Photoshop &nbsp;&middot;&nbsp; Lightroom &nbsp;&middot;&nbsp; Premiere Pro</p>
       </div>
-      <a href="/photography" class="btn btn-light fade-in delay-2" style="align-self:center;">View Full Gallery ↗</a>
+      <a href="/photography" class="btn btn-light fade-in delay-2" style="align-self:center;">View Full Gallery &nearr;</a>
     </div>
 
     <div class="photo-grid fade-in">
@@ -1255,7 +1297,7 @@ layout: layouts/base.njk
       <div class="cv-text fade-in">
         {# <p class="section-tag">Credentials</p> #}
         <h2 class="section-heading">Download my CV</h2>
-        <p>Eight years of professional experience building high-performance web applications. University of Southampton, BSc Information Technology — First Class Honours.</p>
+        <p>Eight years of professional experience building high-performance web applications. University of Southampton, BSc Information Technology, First Class Honours.</p>
       </div>
       <div class="fade-in delay-2">
         <a href="/assets/Christopher Dale CV.pdf" class="btn" download>

@@ -1,0 +1,257 @@
+---
+title: Crust Central — Technical Deep Dive — Christopher Dale
+layout: layouts/base.njk
+---
+{% include "case-study-styles.njk" %}
+<style>
+  /* ── Spot-hub extras ── */
+  .toc { list-style: none; counter-reset: toc-counter; padding: 0; margin-bottom: 2.5rem; }
+  .toc li {
+    counter-increment: toc-counter;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88rem; font-weight: 500;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .toc li::before {
+    content: counter(toc-counter, decimal-leading-zero);
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em;
+    opacity: 0.35; min-width: 2rem;
+  }
+  .toc li a { transition: opacity 0.2s; }
+  .toc li a:hover { opacity: 0.6; }
+  .cs-h3 {
+    font-family: var(--font-serif); font-size: 1.2rem;
+    letter-spacing: -0.01em; margin-top: 2.5rem; margin-bottom: 1rem;
+  }
+  .cs-img-block { margin: 1.5rem 0; border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
+  .cs-img-block img { width: 100%; display: block; }
+  .cs-img-cap { font-size: 0.68rem; text-align: center; opacity: 0.4; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.5rem; }
+  .objectives-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem;
+  }
+  .obj-card {
+    padding: 1.5rem; border: 1px solid var(--border); border-radius: 4px; background: #fff;
+  }
+  .obj-card-title { font-weight: 600; font-size: 0.88rem; margin-bottom: 0.5rem; }
+  .obj-card-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+  .next-steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
+  .next-steps-col h3 { font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 1rem; }
+  @media (max-width: 768px) {
+    .objectives-grid { grid-template-columns: 1fr; }
+    .next-steps-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">CD</a>
+  <a href="/" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back
+  </a>
+</nav>
+
+<section class="cs-hero">
+  <div class="cs-hero-inner">
+    <p class="section-tag fade-in">Personal Project &mdash; Technical Overview</p>
+    <h1 class="cs-title fade-in delay-1">Crust<br>Central.</h1>
+    <p class="cs-subtitle fade-in delay-2">A Progressive Web App for discovering and mapping skateboarding spots worldwide &mdash; built with Next.js 15, Supabase, PostGIS, Deck.gl, and Gemini AI.</p>
+  </div>
+</section>
+
+
+<!-- ─── OVERVIEW ──────────────────────────────────── -->
+<section class="cs-section">
+  <div class="cs-inner">
+    <div class="cs-content-grid fade-in">
+      <div>
+        <h2 class="tech-heading">About</h2>
+        <p class="cs-desc">Crust Central is a PWA designed to map skateboarding spots and user-generated media on a global scale. Users can discover spots worldwide, log tricks performed at each location, and contribute their own discoveries.</p>
+        <p class="cs-desc" style="margin-top:1rem;">The codebase is private for security reasons, but <a href="https://github.com/chrisdale44/spot-hub-samples" target="_blank" rel="noopener noreferrer" style="font-weight:600;border-bottom:1px solid var(--dark);">code samples are available on GitHub</a> and full access can be granted on request.</p>
+        <a href="https://crustcentral.com" target="_blank" rel="noopener noreferrer" class="cs-cta">Visit crustcentral.com &nearr;</a>
+      </div>
+      <div>
+        <a href="https://crustcentral.com" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/spot-hub/main.jpg" alt="Crust Central app" class="cs-image" style="margin-bottom:0;">
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── OBJECTIVES ────────────────────────────────── -->
+<section class="cs-section" style="background:#fff;" id="objectives">
+  <div class="cs-inner">
+    <p class="section-tag fade-in">Objectives</p>
+    <h2 class="tech-heading fade-in delay-1">Design Goals.</h2>
+    <div class="objectives-grid fade-in delay-2">
+      <div class="obj-card">
+        <p class="obj-card-title">Optimised Performance</p>
+        <p class="obj-card-desc">Fast, smooth, lag-free rendering of thousands of map pins worldwide via GPU-accelerated WebGL.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-card-title">Streamlined Content Management</p>
+        <p class="obj-card-desc">Simplified process for adding spots, images, and related information including batch upload.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-card-title">Intuitive Discovery</p>
+        <p class="obj-card-desc">Effortless filtering of spots and full-text search functionality across all locations.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-card-title">Cross-Platform</p>
+        <p class="obj-card-desc">Full functionality across Web, Android, and iOS using Progressive Web App capabilities.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-card-title">Cost-Efficient Scalability</p>
+        <p class="obj-card-desc">Dynamic scaling while minimising infrastructure costs using edge functions and intelligent caching.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-card-title">Local-First Architecture</p>
+        <p class="obj-card-desc">Multi-layer caching (IndexedDB &rarr; Redis &rarr; Supabase) for near-instant repeat data access.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TECH STACK ────────────────────────────────── -->
+<section class="cs-section" id="technical-implementation">
+  <div class="cs-inner">
+    <p class="section-tag fade-in">Stack</p>
+    <h2 class="tech-heading fade-in delay-1">Technologies.</h2>
+    <div class="tech-tags fade-in delay-2">
+      <span class="tech-tag">Next.js 15</span>
+      <span class="tech-tag">React</span>
+      <span class="tech-tag">JavaScript</span>
+      <span class="tech-tag">Node.js</span>
+      <span class="tech-tag">Supabase</span>
+      <span class="tech-tag">PostGIS</span>
+      <span class="tech-tag">Deck.gl</span>
+      <span class="tech-tag">MapLibre GL</span>
+      <span class="tech-tag">Jotai</span>
+      <span class="tech-tag">Redis (Upstash)</span>
+      <span class="tech-tag">IndexedDB (Dexie.js)</span>
+      <span class="tech-tag">Gemini AI</span>
+      <span class="tech-tag">Cloudinary CDN</span>
+      <span class="tech-tag">Google OAuth</span>
+      <span class="tech-tag">ShadCN</span>
+      <span class="tech-tag">Tailwind CSS</span>
+      <span class="tech-tag">Serwist (Service Worker)</span>
+      <span class="tech-tag">Netlify Edge</span>
+      <span class="tech-tag">Vitest + RTL</span>
+      <span class="tech-tag">Sentry</span>
+      <span class="tech-tag">ESLint + Prettier</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PERFORMANCE ───────────────────────────────── -->
+<section class="cs-section" style="background:#fff;" id="performance">
+  <div class="cs-inner">
+    <p class="section-tag fade-in">Performance</p>
+    <h2 class="tech-heading fade-in delay-1">Optimisations.</h2>
+
+    <div class="fade-in delay-2">
+      <h3 class="cs-h3">WebGL via Deck.gl</h3>
+      <p class="cs-desc">Deck.gl is a WebGL-powered library that leverages GPU acceleration for significantly faster rendering and smoother interactivity, enabling Crust Central to handle thousands of map pins worldwide while maintaining smooth movement and scrolling.</p>
+
+      <h3 class="cs-h3">Image Pipeline</h3>
+      <ul class="cs-bullets">
+        <li><strong>CDN Delivery:</strong> Cloudinary provides low-latency image delivery worldwide.</li>
+        <li><strong>Auto-optimisation:</strong> Images are compressed, converted to WebP, resized to 1000px maximum, and watermarked on upload.</li>
+        <li><strong>Thumbnails:</strong> 200&times;200px thumbnails are auto-generated for fast-loading map pin previews.</li>
+        <li><strong>Lazy loading:</strong> IntersectionObserver API + Next.js Image component reduce initial page load.</li>
+        <li><strong>SVG icons:</strong> Lightweight, scalable, no HTTP requests.</li>
+        <li><strong>Service Worker:</strong> Caches images in the browser cache API to reduce repeat requests.</li>
+      </ul>
+
+      <h3 class="cs-h3">Grid-Based Data Fetching</h3>
+      <p class="cs-desc" style="margin-bottom:1rem;">Crust Central uses a grid-based system for data fetching, where each grid square has a unique ID based on coordinates. On initial load, two concurrent requests are made:</p>
+      <ul class="cs-bullets" style="margin-bottom:1.5rem;">
+        <li>Fetch shallow spot data worldwide &mdash; enough for map pins and thumbnails. Paginated if &gt;5,000 spots (~1MB). Browsing and filtering is near-instantaneous once complete.</li>
+        <li>Pre-fetch complete spot data for grid squares surrounding the visible area. Grid IDs, timestamps, and cache depth are stored in IndexedDB to prevent duplicate requests.</li>
+      </ul>
+      <div class="cs-img-block">
+        <img src="/assets/spot-hub/fetching-2.jpg" alt="Grid-based pre-fetching visualisation">
+      </div>
+      <p class="cs-desc" style="margin-bottom:1rem;">As the user moves around the map, new grid squares are cross-referenced with shallow data to determine which ones contain spots before making database requests.</p>
+      <div class="cs-img-block">
+        <img src="/assets/spot-hub/fetching-3.jpg" alt="Dynamic grid fetching visualisation">
+      </div>
+
+      <h3 class="cs-h3">Local-First Caching Strategy</h3>
+      <div class="cs-img-block">
+        <img src="/assets/spot-hub/caching.png" alt="Crust Central caching strategy diagram">
+      </div>
+      <p class="cs-desc" style="margin-bottom:0.8rem;">The flow for fetching spot data:</p>
+      <ul class="cs-bullets">
+        <li>Check IndexedDB &rarr; if found and not stale, return data</li>
+        <li>Call Server Action (running on Netlify Edge)</li>
+        <li>Check Redis cache &rarr; if found and not stale, return data</li>
+        <li>HTTP fetch to Supabase &rarr; edge server checks in-memory cache first</li>
+        <li>Request made to Supabase as final fallback</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ─── USER EXPERIENCE ───────────────────────────── -->
+<section class="cs-section" id="user-experience">
+  <div class="cs-inner">
+    <p class="section-tag fade-in">User Experience</p>
+    <h2 class="tech-heading fade-in delay-1">Features.</h2>
+
+    <div class="fade-in delay-2">
+      <h3 class="cs-h3">Image Geolocation</h3>
+      <p class="cs-desc" style="margin-bottom:1rem;">EXIF geolocation data is extracted from uploaded images to automatically position map pins at the correct location, streamlining the spot-adding experience.</p>
+      <div class="cs-img-block">
+        <img src="/assets/spot-hub/spot-upload.gif" alt="Spot upload demonstration">
+        <p class="cs-img-cap">Single spot upload with auto-geolocation</p>
+      </div>
+
+      <h3 class="cs-h3">Batch Upload</h3>
+      <p class="cs-desc" style="margin-bottom:1rem;">Up to 50 images can be selected at once. Geolocation data automatically groups nearby images together. A drag-and-drop interface allows corrections before creating spots individually.</p>
+      <div class="cs-img-block">
+        <img src="/assets/spot-hub/batch-upload.gif" alt="Batch upload demonstration">
+        <p class="cs-img-cap">Batch upload with automatic grouping</p>
+      </div>
+
+      <h3 class="cs-h3">AI Image Analysis (Gemini)</h3>
+      <p class="cs-desc" style="margin-bottom:1rem;">Google Gemini AI analyses spot images with a predefined prompt to generate suggested tags, enhancing the tagging process and improving discoverability.</p>
+      <div class="cs-img-block">
+        <img src="/assets/spot-hub/tag-suggestions.gif" alt="AI tag suggestions demonstration">
+        <p class="cs-img-cap">Gemini-powered AI tag suggestions</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── NEXT STEPS ────────────────────────────────── -->
+<section class="cs-section" style="background:#fff;" id="next-steps">
+  <div class="cs-inner">
+    <p class="section-tag fade-in">Roadmap</p>
+    <h2 class="tech-heading fade-in delay-1">Next Steps.</h2>
+    <div class="next-steps-grid fade-in delay-2">
+      <div class="next-steps-col">
+        <h3>Beta Release Goals</h3>
+        <ul class="cs-bullets">
+          <li><strong>Instagram API:</strong> Display related posts for each map pin.</li>
+          <li><strong>YouTube API:</strong> Display related videos with timestamped playback.</li>
+          <li><strong>Facebook Auth:</strong> Default login option (affects Instagram API limits).</li>
+          <li><strong>PostHog:</strong> Web analytics, session recording, and A/B testing.</li>
+          <li><strong>Stripe:</strong> Tiered pricing model for advanced features.</li>
+          <li><strong>Vitest / RTL:</strong> Improve test coverage across codebase.</li>
+          <li><strong>Playwright / Cypress:</strong> End-to-end test coverage.</li>
+        </ul>
+      </div>
+      <div class="next-steps-col">
+        <h3>Future Enhancements</h3>
+        <ul class="cs-bullets">
+          <li><strong>Legend State</strong> or <strong>Zero Sync</strong> for local-first database syncing.</li>
+          <li><strong>TypeScript</strong> for type safety as the app grows in complexity.</li>
+          <li><strong>Remix</strong> or <strong>Waku</strong> as a more performant Next.js alternative.</li>
+          <li><strong>Svelte</strong>, <strong>SolidJS</strong>, or <strong>Astro</strong> as a React alternative.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
