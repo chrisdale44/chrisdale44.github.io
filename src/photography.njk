@@ -1,0 +1,536 @@
+---
+layout: layouts/base.njk
+title: Photography — Christopher Dale
+---
+<style>
+  /* ── Reset & base ──────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #F5F1EB;
+    --dark: #0E0E0E;
+    --mid: #2A2A2A;
+    --muted: #7A7A7A;
+    --border: #E0DBD3;
+    --font-serif: 'DM Serif Display', serif;
+    --font-sans: 'Inter', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--cream);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+
+  /* ── Nav ────────────────────────────────────────── */
+  .nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.25rem 2.5rem;
+    mix-blend-mode: difference;
+    color: #fff;
+  }
+  .nav-logo {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
+  }
+  .nav-back {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  .nav-back:hover { opacity: 1; }
+
+  /* ── Hero ───────────────────────────────────────── */
+  .photo-hero {
+    background: var(--dark);
+    color: #fff;
+    padding: 10rem 2.5rem 5rem;
+    min-height: 55vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+  .photo-hero-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .section-tag {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.4;
+    margin-bottom: 1rem;
+  }
+  .hero-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1.0;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.5rem;
+  }
+  .hero-sub {
+    font-size: 1rem;
+    opacity: 0.5;
+    max-width: 440px;
+    line-height: 1.6;
+  }
+
+  /* ── Published In ───────────────────────────────── */
+  .pub-section {
+    background: var(--dark);
+    color: #fff;
+    padding: 2.5rem 2.5rem 3rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+  }
+  .pub-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .pub-title {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.4;
+    margin-bottom: 1.2rem;
+  }
+  .pub-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+  .pub-tag {
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 100px;
+    padding: 0.45rem 1rem;
+    opacity: 0.75;
+    transition: opacity 0.2s, border-color 0.2s;
+  }
+  .pub-tag:hover { opacity: 1; border-color: rgba(255,255,255,0.5); }
+
+  /* ── Gallery grid ───────────────────────────────── */
+  .gallery-section {
+    background: var(--cream);
+    padding: 4rem 2.5rem 5rem;
+  }
+  .gallery-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .gallery-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 2.5rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .gallery-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .gallery-note {
+    font-size: 0.72rem;
+    opacity: 0.4;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+  }
+
+  .photo-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .photo-item {
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    border-radius: 4px;
+  }
+  .photo-item.tall { aspect-ratio: 3/4; grid-row: span 2; }
+  .photo-item.wide { grid-column: span 2; aspect-ratio: 16/9; }
+
+  .photo-placeholder {
+    width: 100%;
+    height: 100%;
+    background: var(--border);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    color: var(--muted);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: background 0.2s;
+  }
+  .photo-placeholder:hover { background: #d8d3cb; }
+
+  /* ── Instagram CTA ──────────────────────────────── */
+  .insta-section {
+    background: var(--dark);
+    color: #fff;
+    padding: 4rem 2.5rem;
+  }
+  .insta-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  .insta-text {}
+  .insta-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.8rem;
+  }
+  .insta-sub {
+    font-size: 0.88rem;
+    opacity: 0.5;
+    max-width: 380px;
+    line-height: 1.6;
+  }
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.9rem 1.8rem;
+    background: #fff;
+    color: var(--dark);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+  }
+  .btn:hover { opacity: 0.85; }
+  .btn-outline {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.3);
+  }
+  .btn-outline:hover { border-color: rgba(255,255,255,0.7); opacity: 1; }
+
+  /* ── Video section ──────────────────────────────── */
+  .video-section {
+    background: var(--cream);
+    padding: 4rem 2.5rem 5rem;
+    border-top: 1px solid var(--border);
+  }
+  .video-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .video-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  .video-heading {
+    font-family: var(--font-serif);
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+  }
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .video-embed {
+    aspect-ratio: 16/9;
+    border-radius: 4px;
+    overflow: hidden;
+    background: var(--dark);
+  }
+  .video-embed iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  .btn-dark {
+    background: var(--dark);
+    color: #fff;
+  }
+  .btn-dark:hover { opacity: 0.8; }
+
+  /* ── Footer ─────────────────────────────────────── */
+  .photo-footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.35);
+    padding: 2rem 2.5rem;
+    font-size: 0.72rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  .photo-footer-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  .photo-footer-links a {
+    color: rgba(255,255,255,0.35);
+    transition: color 0.2s;
+  }
+  .photo-footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+  /* ── Fade-in ─────────────────────────────────────── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: none;
+  }
+  .delay-1 { transition-delay: 0.12s; }
+  .delay-2 { transition-delay: 0.24s; }
+
+  /* ── Responsive ─────────────────────────────────── */
+  @media (max-width: 900px) {
+    .photo-grid { grid-template-columns: repeat(2, 1fr); }
+    .photo-item.wide { grid-column: span 2; }
+    .photo-item.tall { grid-row: auto; aspect-ratio: 4/3; }
+    .video-grid { grid-template-columns: 1fr; }
+    .insta-inner { flex-direction: column; align-items: flex-start; }
+    .gallery-header { flex-direction: column; align-items: flex-start; }
+    .video-header { flex-direction: column; align-items: flex-start; }
+  }
+  @media (max-width: 600px) {
+    .nav { padding: 1rem 1.2rem; }
+    .photo-hero { padding: 8rem 1.2rem 3rem; }
+    .gallery-section, .insta-section, .video-section, .pub-section { padding-left: 1.2rem; padding-right: 1.2rem; }
+    .photo-grid { grid-template-columns: 1fr; }
+    .photo-item.wide { grid-column: auto; aspect-ratio: 4/3; }
+  }
+</style>
+
+<!-- ─── NAV ────────────────────────────────────────── -->
+<nav class="nav">
+  <a href="/" class="nav-logo">CD</a>
+  <a href="/" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back to Portfolio
+  </a>
+</nav>
+
+<!-- ─── HERO ───────────────────────────────────────── -->
+<section class="photo-hero">
+  <div class="photo-hero-inner">
+    <p class="section-tag fade-in">Photography / Film</p>
+    <h1 class="hero-heading fade-in delay-1">Through the<br>Lens.</h1>
+    <p class="hero-sub fade-in delay-2">Skateboarding, street, and portrait photography. Published in print and online across the skateboarding world.</p>
+  </div>
+</section>
+
+<!-- ─── PUBLISHED IN ───────────────────────────────── -->
+<div class="pub-section">
+  <div class="pub-inner">
+    <p class="pub-title fade-in">Published In</p>
+    <div class="pub-tags fade-in delay-1">
+      <span class="pub-tag">Grey Magazine</span>
+      <span class="pub-tag">Skateboarders Companion</span>
+      <span class="pub-tag">Slam Magazine</span>
+      <span class="pub-tag">Damn Magazine</span>
+      <span class="pub-tag">Backside Magazine</span>
+      <span class="pub-tag">Dogpiss Magazine</span>
+      <span class="pub-tag">Sidewalk Online</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─── GALLERY ────────────────────────────────────── -->
+<section class="gallery-section">
+  <div class="gallery-inner">
+    <div class="gallery-header fade-in">
+      <div>
+        <p class="section-tag">Gallery</p>
+        <h2 class="gallery-heading">The Work.</h2>
+      </div>
+      <span class="gallery-note">Photos coming soon — follow on Instagram for updates</span>
+    </div>
+
+    <div class="photo-grid fade-in delay-1">
+      <!-- Row 1 -->
+      <div class="photo-item tall">
+        <div class="photo-placeholder">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Photo</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Photo</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Photo</span>
+        </div>
+      </div>
+      <!-- Row 2 (col 1 still occupied by .tall) -->
+      <div class="photo-item">
+        <div class="photo-placeholder">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Photo</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Photo</span>
+        </div>
+      </div>
+      <!-- Row 3 -->
+      <div class="photo-item wide">
+        <div class="photo-placeholder">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Photo</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Photo</span>
+        </div>
+      </div>
+      <!-- Row 4 -->
+      <div class="photo-item">
+        <div class="photo-placeholder">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Photo</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Photo</span>
+        </div>
+      </div>
+      <div class="photo-item tall">
+        <div class="photo-placeholder">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Photo</span>
+        </div>
+      </div>
+      <!-- Row 5 (col 3 occupied by .tall) -->
+      <div class="photo-item">
+        <div class="photo-placeholder">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Photo</span>
+        </div>
+      </div>
+      <div class="photo-item">
+        <div class="photo-placeholder">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
+          <span>Photo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── INSTAGRAM CTA ──────────────────────────────── -->
+<section class="insta-section">
+  <div class="insta-inner">
+    <div class="insta-text">
+      <p class="section-tag fade-in" style="color:#fff;">Instagram</p>
+      <h2 class="insta-heading fade-in delay-1">Follow the Work<br>in Progress.</h2>
+      <p class="insta-sub fade-in delay-2">Skateboarding, street photography, and behind-the-scenes from London and beyond.</p>
+    </div>
+    <a href="https://www.instagram.com/vx.4000/" target="_blank" rel="noopener noreferrer" class="btn btn-outline fade-in delay-2">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+      @vx.4000 on Instagram ↗
+    </a>
+  </div>
+</section>
+
+<!-- ─── VIDEOS ──────────────────────────────────────── -->
+<section class="video-section">
+  <div class="video-inner">
+    <div class="video-header fade-in">
+      <div>
+        <p class="section-tag">Film &amp; Video</p>
+        <h2 class="video-heading">Watch the Footage.</h2>
+      </div>
+      <a href="https://www.youtube.com/@vx.4000" target="_blank" rel="noopener noreferrer" class="btn btn-dark">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        Subscribe on YouTube
+      </a>
+    </div>
+    <div class="video-grid fade-in delay-1">
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/dtIeS8onYXw" title="Skate video 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/SCOBB4M7kZ8" title="Skate video 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="video-embed">
+        <iframe src="https://www.youtube.com/embed/LPtJfccSNCU" title="Skate video 3" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─────────────────────────────────────── -->
+<footer class="photo-footer">
+  <span>© 2025 Christopher Dale. All rights reserved.</span>
+  <div class="photo-footer-links">
+    <a href="/">Portfolio</a>
+    <a href="https://www.instagram.com/vx.4000/" target="_blank" rel="noopener noreferrer">Instagram</a>
+    <a href="https://www.youtube.com/@vx.4000" target="_blank" rel="noopener noreferrer">YouTube</a>
+    <a href="https://github.com/chrisdale44" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </div>
+</footer>
+
+<script>
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  fadeEls.forEach(el => observer.observe(el));
+</script>

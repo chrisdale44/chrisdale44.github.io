@@ -3,434 +3,425 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Spot Hub</title>
+    <title>Crust Central — Christopher Dale</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Pacifico&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
-
-      .pacifico {
-        font-family: "Pacifico", cursive;
-      }
-
-      .white-bullets {
-        list-style-type: none;
-        padding-left: 1.5rem;
-      }
-      .white-bullets li::before {
-        content: "○";
-        color: #000;
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
-      }
+      .pacifico { font-family: 'Pacifico', cursive; }
     </style>
   </head>
-  <body class="bg-gray-50 text-gray-900">
-    <div class="container mx-auto p-4 pb-8 max-w-4xl">
-      
-<div
-  class="flex flex-col items-center text-md bg-white border-none focus:outline-none [box-shadow:rgba(0,_0,_0,_0.3)_0px_1px_4px_-1px] rounded min-w-[340px]"
->
-  <div class="bg-[#157] flex align-center justify-center items-center text-center w-full relative">
-        <a href="/" class="text-white absolute left-4 block p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-</svg>
+  <body>
+    <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #F5F1EB;
+    --dark: #0E0E0E;
+    --mid: #2A2A2A;
+    --muted: #7A7A7A;
+    --border: #E0DBD3;
+    --font-serif: 'DM Serif Display', serif;
+    --font-sans: 'Inter', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--cream);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
 
-        </a>
-    <a href="https://spot-hub.app" target="_blank"
-      ><h1 class="pacifico text-white text-2xl sm:text-4xl p-4">
-        Spot Hub - Technical Overview
-      </h1></a
-    >
+  /* Nav */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 2.5rem;
+    mix-blend-mode: difference;
+    color: #fff;
+  }
+  .nav-logo { font-family: var(--font-serif); font-size: 1.1rem; }
+  .nav-back {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    opacity: 0.7; transition: opacity 0.2s;
+  }
+  .nav-back:hover { opacity: 1; }
+
+  /* Hero */
+  .cs-hero {
+    background: var(--dark); color: #fff;
+    padding: 10rem 2.5rem 5rem; min-height: 55vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .cs-hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
+  .section-tag {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; opacity: 0.4; margin-bottom: 1rem;
+  }
+  .cs-title {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1.0; letter-spacing: -0.02em; margin-bottom: 1rem;
+  }
+  .cs-subtitle {
+    font-size: 1rem; opacity: 0.5; max-width: 500px; line-height: 1.6;
+  }
+
+  /* Content sections */
+  .cs-section { padding: 4rem 2.5rem; }
+  .cs-section:nth-child(even) { background: #fff; }
+  .cs-inner { max-width: 1100px; margin: 0 auto; }
+
+  /* Before/After */
+  .before-after {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem;
+  }
+  .before-after-item img {
+    width: 100%; border-radius: 4px; border: 1px solid var(--border);
+  }
+  .img-label {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; opacity: 0.4; margin-top: 0.6rem; text-align: center;
+  }
+
+  /* Single image */
+  .cs-image { border-radius: 4px; border: 1px solid var(--border); width: 100%; margin-bottom: 3rem; }
+
+  /* Content grid */
+  .cs-content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .cs-content-grid.single { grid-template-columns: 1fr; max-width: 720px; }
+
+  /* Tech tags */
+  .tech-heading {
+    font-family: var(--font-serif); font-size: 1.4rem;
+    margin-bottom: 1.2rem; letter-spacing: -0.01em;
+  }
+  .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+  .tech-tag {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em;
+    border: 1px solid var(--border); border-radius: 100px;
+    padding: 0.38rem 0.85rem; color: var(--mid);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .tech-tag:hover { border-color: var(--dark); color: var(--dark); }
+
+  /* Bullets */
+  .cs-bullets { list-style: none; padding: 0; }
+  .cs-bullets li {
+    font-size: 0.9rem; line-height: 1.65; color: var(--mid);
+    padding: 0.75rem 0; border-bottom: 1px solid var(--border);
+    padding-left: 1.2rem; position: relative;
+  }
+  .cs-bullets li::before {
+    content: ''; position: absolute; left: 0; top: 1.1rem;
+    width: 5px; height: 5px; border-radius: 50%; background: var(--muted);
+  }
+  .cs-bullets li:last-child { border-bottom: none; }
+
+  /* Description text */
+  .cs-desc { font-size: 0.95rem; line-height: 1.7; color: var(--mid); }
+  .cs-desc + .cs-desc { margin-top: 1rem; }
+
+  /* CTA */
+  .cs-cta {
+    margin-top: 2rem;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.9rem 1.8rem; background: var(--dark); color: #fff;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    border-radius: 2px; transition: opacity 0.2s;
+  }
+  .cs-cta:hover { opacity: 0.8; }
+
+  /* Divider */
+  .cs-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+  /* Fade-in */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: none; }
+  .delay-1 { transition-delay: 0.12s; }
+  .delay-2 { transition-delay: 0.24s; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav { padding: 1rem 1.2rem; }
+    .cs-hero { padding: 8rem 1.2rem 3rem; }
+    .cs-section { padding: 2.5rem 1.2rem; }
+    .before-after { grid-template-columns: 1fr; }
+    .cs-content-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
+  });
+</script>
+
+<style>
+  /* ── Spot-hub extras ── */
+  .toc { list-style: none; counter-reset: toc-counter; padding: 0; margin-bottom: 2.5rem; }
+  .toc li {
+    counter-increment: toc-counter;
+    padding: 0.65rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.88rem; font-weight: 500;
+    display: flex; align-items: center; gap: 0.8rem;
+  }
+  .toc li::before {
+    content: counter(toc-counter, decimal-leading-zero);
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em;
+    opacity: 0.35; min-width: 2rem;
+  }
+  .toc li a { transition: opacity 0.2s; }
+  .toc li a:hover { opacity: 0.6; }
+  .cs-h3 {
+    font-family: var(--font-serif); font-size: 1.2rem;
+    letter-spacing: -0.01em; margin-top: 2.5rem; margin-bottom: 1rem;
+  }
+  .cs-img-block { margin: 1.5rem 0; border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
+  .cs-img-block img { width: 100%; display: block; }
+  .cs-img-cap { font-size: 0.68rem; text-align: center; opacity: 0.4; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.5rem; }
+  .objectives-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem;
+  }
+  .obj-card {
+    padding: 1.5rem; border: 1px solid var(--border); border-radius: 4px; background: #fff;
+  }
+  .obj-card-title { font-weight: 600; font-size: 0.88rem; margin-bottom: 0.5rem; }
+  .obj-card-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+  .next-steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem; }
+  .next-steps-col h3 { font-family: var(--font-serif); font-size: 1.1rem; margin-bottom: 1rem; }
+  @media (max-width: 768px) {
+    .objectives-grid { grid-template-columns: 1fr; }
+    .next-steps-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<nav class="nav">
+  <a href="/" class="nav-logo">CD</a>
+  <a href="/" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back
+  </a>
+</nav>
+
+<section class="cs-hero">
+  <div class="cs-hero-inner">
+    <p class="section-tag fade-in">Personal Project &mdash; Technical Overview</p>
+    <h1 class="cs-title fade-in delay-1">Crust<br>Central.</h1>
+    <p class="cs-subtitle fade-in delay-2">A Progressive Web App for discovering and mapping skateboarding spots worldwide &mdash; built with Next.js 15, Supabase, PostGIS, Deck.gl, and Gemini AI.</p>
   </div>
-  <div class="px-8 pb-8">
-    <div class="my-8 flex flex-col md:flex-row gap-4">
-      <div class="flex-1">
-        <section class="text-sm">
-          <h2 class="text-md font-bold mb-4 pb-2">
-            A Progressive Web App designed to map action sports locations and 
-            user-generated media on a global scale
-          </h2>
-          <p class="mb-4 text-sm">
-            Designed to fill a gap in the action sports community, Spot Hub enables 
-            users to discover spots and street obstacles around 
-            the world, and document the history of tricks performed at
-            each location. With a functional MVP version currently in alpha
-            release phase, the app is slated for public release later this year,
-            with additional features and improvements to be rolled out
-            iteratively.
-          </p>
-          <p class="text-sm">
-            The Spot Hub codebase is currently private for security reasons but <a href="https://github.com/chrisdale44/spot-hub-samples" class="text-blue-600 hover:text-blue-800 font-bold">code 
-            samples are available here</a> and full access to the Github repo can be granted upon request.
-          </p>
-        </section>
+</section>
+
+
+<!-- ─── OVERVIEW ──────────────────────────────────── -->
+<section class="cs-section">
+  <div class="cs-inner">
+    <div class="cs-content-grid fade-in">
+      <div>
+        <h2 class="tech-heading">About</h2>
+        <p class="cs-desc">Crust Central is a PWA designed to map skateboarding spots and user-generated media on a global scale. Users can discover spots worldwide, log tricks performed at each location, and contribute their own discoveries.</p>
+        <p class="cs-desc" style="margin-top:1rem;">The codebase is private for security reasons, but <a href="https://github.com/chrisdale44/spot-hub-samples" target="_blank" rel="noopener noreferrer" style="font-weight:600;border-bottom:1px solid var(--dark);">code samples are available on GitHub</a> and full access can be granted on request.</p>
+        <a href="https://crustcentral.com" target="_blank" rel="noopener noreferrer" class="cs-cta">Visit crustcentral.com &nearr;</a>
       </div>
-      <div class="max-h-96 flex-1 text-center">
-        <a href="https://spot-hub.app" target="_blank"
-          ><img
-            src="/assets/spot-hub/main.jpg"
-            alt="Spot Hub"
-            class="max-h-96 min-w-48"
-        /></a>
-        <a
-          href="https://spot-hub.app"
-          target="_blank"
-          class="text-blue-600 hover:text-blue-800 text-sm mb-6 text-center"
-          >spot-hub.app</a
-        >
-        <p class="text-xs text-[#666]">
-          <strong>Demo credentials:</strong> spothubdemo@gmail.com / spothub123
-        </p>
+      <div>
+        <a href="https://crustcentral.com" target="_blank" rel="noopener noreferrer">
+          <img src="/assets/spot-hub/main.jpg" alt="Crust Central app" class="cs-image" style="margin-bottom:0;">
+        </a>
       </div>
     </div>
-    <section class="mb-8 text-sm w-full">
-      <h2 class="text-xl font-bold mb-4 border-b pb-2">Table of Contents</h2>
-      <ol class="list-decimal pl-8">
-        <li>
-          <a class="pl-1 hover:text-blue-600" href="#objectives">Objectives</a>
-        </li>
-        <li>
-          <a class="pl-1 hover:text-blue-600" href="#technical-implementation"
-            >Technologies</a
-          >
-        </li>
-        <li>
-          <a class="pl-1 hover:text-blue-600" href="#performance"
-            >Performance Optimisations</a
-          >
-        </li>
-        <li>
-          <a class="pl-1 hover:text-blue-600" href="#user-experience"
-            >User Experience</a
-          >
-        </li>
-        <li>
-          <a class="pl-1 hover:text-blue-600" href="#next-steps">Next Steps</a>
-        </li>
-      </ol>
-    </section>
-    <section class="mb-8 text-sm w-full" id="objectives">
-      <h2 class="text-xl font-bold mb-4 border-b pb-2">Objectives</h2>
-      <ul class="list-disc space-y-2 text-md px-8">
-        <li class="text-sm">
-          <strong>Optimised Performance:</strong> Ensure fast, smooth and
-          lag-free rendering of thousands — potentially tens of thousands — of
-          map pins around the world.
-        </li>
-        <li>
-          <strong>Streamlined Content Management:</strong> Simplify the process
-          of adding spots, images, and related information.
-        </li>
-        <li>
-          <strong>Intuitive Discovery:</strong> Enable effortless filtering of
-          spots and search functionality.
-        </li>
-        <li>
-          <strong>Cross-Platform Compatibility:</strong> Full functionality
-          across Web, Android, and iOS devices.
-        </li>
-        <li>
-          <strong>Cost-Efficient Scalability:</strong> Scale dynamically while
-          minimising infrastructure expenses.
-        </li>
+  </div>
+</section>
+
+<!-- ─── OBJECTIVES ────────────────────────────────── -->
+<section class="cs-section" style="background:#fff;" id="objectives">
+  <div class="cs-inner">
+    <p class="section-tag fade-in">Objectives</p>
+    <h2 class="tech-heading fade-in delay-1">Design Goals.</h2>
+    <div class="objectives-grid fade-in delay-2">
+      <div class="obj-card">
+        <p class="obj-card-title">Optimised Performance</p>
+        <p class="obj-card-desc">Fast, smooth, lag-free rendering of thousands of map pins worldwide via GPU-accelerated WebGL.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-card-title">Streamlined Content Management</p>
+        <p class="obj-card-desc">Simplified process for adding spots, images, and related information including batch upload.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-card-title">Intuitive Discovery</p>
+        <p class="obj-card-desc">Effortless filtering of spots and full-text search functionality across all locations.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-card-title">Cross-Platform</p>
+        <p class="obj-card-desc">Full functionality across Web, Android, and iOS using Progressive Web App capabilities.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-card-title">Cost-Efficient Scalability</p>
+        <p class="obj-card-desc">Dynamic scaling while minimising infrastructure costs using edge functions and intelligent caching.</p>
+      </div>
+      <div class="obj-card">
+        <p class="obj-card-title">Local-First Architecture</p>
+        <p class="obj-card-desc">Multi-layer caching (IndexedDB &rarr; Redis &rarr; Supabase) for near-instant repeat data access.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TECH STACK ────────────────────────────────── -->
+<section class="cs-section" id="technical-implementation">
+  <div class="cs-inner">
+    <p class="section-tag fade-in">Stack</p>
+    <h2 class="tech-heading fade-in delay-1">Technologies.</h2>
+    <div class="tech-tags fade-in delay-2">
+      <span class="tech-tag">Next.js 15</span>
+      <span class="tech-tag">React</span>
+      <span class="tech-tag">JavaScript</span>
+      <span class="tech-tag">Node.js</span>
+      <span class="tech-tag">Supabase</span>
+      <span class="tech-tag">PostGIS</span>
+      <span class="tech-tag">Deck.gl</span>
+      <span class="tech-tag">MapLibre GL</span>
+      <span class="tech-tag">Jotai</span>
+      <span class="tech-tag">Redis (Upstash)</span>
+      <span class="tech-tag">IndexedDB (Dexie.js)</span>
+      <span class="tech-tag">Gemini AI</span>
+      <span class="tech-tag">Cloudinary CDN</span>
+      <span class="tech-tag">Google OAuth</span>
+      <span class="tech-tag">ShadCN</span>
+      <span class="tech-tag">Tailwind CSS</span>
+      <span class="tech-tag">Serwist (Service Worker)</span>
+      <span class="tech-tag">Netlify Edge</span>
+      <span class="tech-tag">Vitest + RTL</span>
+      <span class="tech-tag">Sentry</span>
+      <span class="tech-tag">ESLint + Prettier</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PERFORMANCE ───────────────────────────────── -->
+<section class="cs-section" style="background:#fff;" id="performance">
+  <div class="cs-inner">
+    <p class="section-tag fade-in">Performance</p>
+    <h2 class="tech-heading fade-in delay-1">Optimisations.</h2>
+
+    <div class="fade-in delay-2">
+      <h3 class="cs-h3">WebGL via Deck.gl</h3>
+      <p class="cs-desc">Deck.gl is a WebGL-powered library that leverages GPU acceleration for significantly faster rendering and smoother interactivity, enabling Crust Central to handle thousands of map pins worldwide while maintaining smooth movement and scrolling.</p>
+
+      <h3 class="cs-h3">Image Pipeline</h3>
+      <ul class="cs-bullets">
+        <li><strong>CDN Delivery:</strong> Cloudinary provides low-latency image delivery worldwide.</li>
+        <li><strong>Auto-optimisation:</strong> Images are compressed, converted to WebP, resized to 1000px maximum, and watermarked on upload.</li>
+        <li><strong>Thumbnails:</strong> 200&times;200px thumbnails are auto-generated for fast-loading map pin previews.</li>
+        <li><strong>Lazy loading:</strong> IntersectionObserver API + Next.js Image component reduce initial page load.</li>
+        <li><strong>SVG icons:</strong> Lightweight, scalable, no HTTP requests.</li>
+        <li><strong>Service Worker:</strong> Caches images in the browser cache API to reduce repeat requests.</li>
       </ul>
-    </section>
-    <section class="mb-8 text-sm w-full" id="technical-implementation">
-      <h2 class="text-xl font-bold mb-4 border-b pb-2">
-        Technologies
-      </h2>
-      <div class="text-sm md:px-4 overflow-x-auto">
-        <ul class="list-disc pl-4 columns-2 md:columns-3 lg:columns-4 gap-4">
-          <li>Javascript</li>
-          <li>NodeJS</li>
-          <li>React</li>
-          <li>NextJS</li>
-          <li>Jotai</li>
-          <li>MapLibreGL</li>
-          <li>DeckGL</li>
-          <li>Supabase</li>
-          <li>Google OAuth</li>
-          <li>Yup</li>
-          <li>Cloudinary CDN</li>
-          <li>Google Cloud Platform</li>
-          <li>Gemini API</li>
-          <li>React Intersection Observer</li>
-          <li>ShadCN</li>
-          <li>TailwindCSS</li>
-          <li>DexieJS</li>
-          <li>Redis (Upstash)</li>
-          <li>Serwist</li>
-          <li>Netlify</li>
-          <li>Vitest + React Testing Library</li>
-          <li>Sentry</li>
-          <li>ESLint + Prettier</li>
-          <li>Git + GitHub</li>
-          <li>Responsive Design</li>
+
+      <h3 class="cs-h3">Grid-Based Data Fetching</h3>
+      <p class="cs-desc" style="margin-bottom:1rem;">Crust Central uses a grid-based system for data fetching, where each grid square has a unique ID based on coordinates. On initial load, two concurrent requests are made:</p>
+      <ul class="cs-bullets" style="margin-bottom:1.5rem;">
+        <li>Fetch shallow spot data worldwide &mdash; enough for map pins and thumbnails. Paginated if &gt;5,000 spots (~1MB). Browsing and filtering is near-instantaneous once complete.</li>
+        <li>Pre-fetch complete spot data for grid squares surrounding the visible area. Grid IDs, timestamps, and cache depth are stored in IndexedDB to prevent duplicate requests.</li>
+      </ul>
+      <div class="cs-img-block">
+        <img src="/assets/spot-hub/fetching-2.jpg" alt="Grid-based pre-fetching visualisation">
+      </div>
+      <p class="cs-desc" style="margin-bottom:1rem;">As the user moves around the map, new grid squares are cross-referenced with shallow data to determine which ones contain spots before making database requests.</p>
+      <div class="cs-img-block">
+        <img src="/assets/spot-hub/fetching-3.jpg" alt="Dynamic grid fetching visualisation">
+      </div>
+
+      <h3 class="cs-h3">Local-First Caching Strategy</h3>
+      <div class="cs-img-block">
+        <img src="/assets/spot-hub/caching.png" alt="Crust Central caching strategy diagram">
+      </div>
+      <p class="cs-desc" style="margin-bottom:0.8rem;">The flow for fetching spot data:</p>
+      <ul class="cs-bullets">
+        <li>Check IndexedDB &rarr; if found and not stale, return data</li>
+        <li>Call Server Action (running on Netlify Edge)</li>
+        <li>Check Redis cache &rarr; if found and not stale, return data</li>
+        <li>HTTP fetch to Supabase &rarr; edge server checks in-memory cache first</li>
+        <li>Request made to Supabase as final fallback</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ─── USER EXPERIENCE ───────────────────────────── -->
+<section class="cs-section" id="user-experience">
+  <div class="cs-inner">
+    <p class="section-tag fade-in">User Experience</p>
+    <h2 class="tech-heading fade-in delay-1">Features.</h2>
+
+    <div class="fade-in delay-2">
+      <h3 class="cs-h3">Image Geolocation</h3>
+      <p class="cs-desc" style="margin-bottom:1rem;">EXIF geolocation data is extracted from uploaded images to automatically position map pins at the correct location, streamlining the spot-adding experience.</p>
+      <div class="cs-img-block">
+        <img src="/assets/spot-hub/spot-upload.gif" alt="Spot upload demonstration">
+        <p class="cs-img-cap">Single spot upload with auto-geolocation</p>
+      </div>
+
+      <h3 class="cs-h3">Batch Upload</h3>
+      <p class="cs-desc" style="margin-bottom:1rem;">Up to 50 images can be selected at once. Geolocation data automatically groups nearby images together. A drag-and-drop interface allows corrections before creating spots individually.</p>
+      <div class="cs-img-block">
+        <img src="/assets/spot-hub/batch-upload.gif" alt="Batch upload demonstration">
+        <p class="cs-img-cap">Batch upload with automatic grouping</p>
+      </div>
+
+      <h3 class="cs-h3">AI Image Analysis (Gemini)</h3>
+      <p class="cs-desc" style="margin-bottom:1rem;">Google Gemini AI analyses spot images with a predefined prompt to generate suggested tags, enhancing the tagging process and improving discoverability.</p>
+      <div class="cs-img-block">
+        <img src="/assets/spot-hub/tag-suggestions.gif" alt="AI tag suggestions demonstration">
+        <p class="cs-img-cap">Gemini-powered AI tag suggestions</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── NEXT STEPS ────────────────────────────────── -->
+<section class="cs-section" style="background:#fff;" id="next-steps">
+  <div class="cs-inner">
+    <p class="section-tag fade-in">Roadmap</p>
+    <h2 class="tech-heading fade-in delay-1">Next Steps.</h2>
+    <div class="next-steps-grid fade-in delay-2">
+      <div class="next-steps-col">
+        <h3>Beta Release Goals</h3>
+        <ul class="cs-bullets">
+          <li><strong>Instagram API:</strong> Display related posts for each map pin.</li>
+          <li><strong>YouTube API:</strong> Display related videos with timestamped playback.</li>
+          <li><strong>Facebook Auth:</strong> Default login option (affects Instagram API limits).</li>
+          <li><strong>PostHog:</strong> Web analytics, session recording, and A/B testing.</li>
+          <li><strong>Stripe:</strong> Tiered pricing model for advanced features.</li>
+          <li><strong>Vitest / RTL:</strong> Improve test coverage across codebase.</li>
+          <li><strong>Playwright / Cypress:</strong> End-to-end test coverage.</li>
         </ul>
       </div>
-    </section>
-    <section class="mb-8 text-sm w-full" id="performance">
-      <h2 class="text-xl font-bold mb-4 border-b pb-2">
-        Performance Optimisations
-      </h2>
-      <h3 class="text-xl font-semibold mt-6 mb-3">WebGL</h3>
-      <p class="mb-4">
-        In order for Spot Hub to handle large numbers of map pins while maintaining smooth, 
-        lag-free movement and scrolling around the map, the DeckGL library has been implemented.
-        DeckGL is a WebGL-powered library that leverages GPU acceleration for
-        significantly faster rendering and smoother interactivity, resulting in
-        a highly scalable map pin layer.
-      </p>
-      <h3 class="text-xl font-semibold mt-6 mb-3">Images</h3>
-      <ul class="list-disc pl-6 space-y-2">
-        <li>
-          <strong>CDN Delivery:</strong> Spot Hub uses Cloudinary to store
-          images as their CDN provides low-latency delivery worldwide
-        </li>
-        <li>
-          <strong>Image size:</strong> Cloudinary is configured to automatically
-          optimise images as they are uploaded (a feature available to admin
-          users only). Images are compressed, converted to WebP format, resized
-          to a maximum dimension of 1000px, as well as watermarked with the Spot
-          Hub logo
-        </li>
-        <li>
-          <strong>Thumbnails:</strong> Thumbnail versions of spot images are
-          automatically generated by Cloudinary (200x200px) to provide a
-          faster-loading preview image for each each spot
-        </li>
-        <li>
-          <strong>Lazy Loading:</strong> A combination of the Intersection
-          Observer API and lazy-loading attribute (using NextJS Image component)
-          are used to reduce the number of images loaded on initial page load
-        </li>
-        <li>
-          <strong>SVG Icons:</strong> SVG's are used for icons throughout Spot
-          Hub to provide light-weight and styleable vector icons that reduce
-          HTTP requests, improve rendering performance, and scale perfectly
-          across all devices
-        </li>
-        <li>
-          <strong>Service Worker:</strong> Caches images using the browser cache
-          API to reduce HTTP requests
-        </li>
-      </ul>
-      <h3 class="text-xl font-semibold mt-6 mb-3">
-        Data Pre-Fetching and Caching Strategy
-      </h3>
-      <p class="mb-4">
-        Spot Hub uses a grid-based system for data fetching in order to simplify
-        data caching. Each grid square has a unique ID based on its coordinates.
-        On initial page load, two concurrent requests for spot data are made to
-        the database:
-      </p>
-      <ol class="list-decimal pl-6 space-y-2 mb-4">
-        <li>
-          Fetch a shallow set of spot data for all spots worldwide. Shallow spot
-          data provides enough data to display map pins and their thumbnails but
-          does not contain all the data about each spot. If there are more than
-          5000 spots worldwide (~1MB data) then multiple paginated requests are
-          made to the database in the background until all spots are fetched.
-          Fetching this shallow spot data up front means that browsing,
-          filtering and displaying map pins worldwide is almost instantaneous.
-        </li>
-        <li>
-          Pre-fetch complete spot data for grid squares surrounding the visible
-          search area. This could be the users' viewport, or in the example
-          below, is a 25km search radius (pre-fetched grid squares highlighted
-          in green). Grid square ID's along with timestamp and cache depth
-          (shallow or complete) are stored in IndexedDB to prevent future
-          duplicate requests for the same grid squares.
-        </li>
-      </ol>
-      <div class="my-6">
-        <img
-          src="/assets/spot-hub/fetching-2.jpg"
-          alt="Spot data fetching visualisation"
-          class="w-full"
-        />
+      <div class="next-steps-col">
+        <h3>Future Enhancements</h3>
+        <ul class="cs-bullets">
+          <li><strong>Legend State</strong> or <strong>Zero Sync</strong> for local-first database syncing.</li>
+          <li><strong>TypeScript</strong> for type safety as the app grows in complexity.</li>
+          <li><strong>Remix</strong> or <strong>Waku</strong> as a more performant Next.js alternative.</li>
+          <li><strong>Svelte</strong>, <strong>SolidJS</strong>, or <strong>Astro</strong> as a React alternative.</li>
+        </ul>
       </div>
-      <p class="mb-4">
-        As the user moves their search area (or viewport) around the map, map
-        pins are instantly displayed using the shallow spot data. Complete spot
-        data is pre-fetched in the background after determining which grid
-        squares have not been previously fetched (shown in orange below). These
-        orange grid square ID's are then cross-referenced with the shallow spot
-        data to determine which ones contain spots and only make a database
-        request if any grid squares contain spots, preventing unnecessary calls
-        to the database.
-      </p>
-      <p class="mb-4">
-        If the user interacts with a map pin before the pre-fetched full spot
-        data has been received then a request is made to the database for that
-        single spot data.
-      </p>
-      <p class="mb-4">
-        In order to prevent requesting too many grid squares at once when the
-        user zooms out on the map, grid squares are only requested below a
-        certain zoom level.
-      </p>
-      <div class="my-6">
-        <img
-          src="/assets/spot-hub/fetching-3.jpg"
-          alt="Spot data fetching visualisation"
-          class="w-full"
-        />
-      </div>
-      <h3 class="text-xl font-semibold mt-6 mb-3">
-        Local-First Caching Strategy
-      </h3>
-      <div class="my-6">
-        <img
-          src="/assets/spot-hub/caching.png"
-          alt="Spot Hub caching strategy"
-          class="w-full"
-        />
-      </div>
-      <p class="mb-2">The flow for fetching spot data:</p>
-      <ol class="list-decimal pl-6 space-y-1">
-        <li>
-          Check IndexedDB <br />
-          1.a. If found, check cache timestamp <br />
-          1.b. If data is not stale return data, otherwise continue
-        </li>
-        <li>Call to Server Action (running on Netlify Edge Server)</li>
-        <li>
-          Check Redis cache <br />
-          3.a. If found, check cache timestamp <br />
-          3.b. If data is not stale return data, otherwise continue
-        </li>
-        <li>
-          HTTP fetch to Supabase <br />
-          4.a. Edge Server checks in-memory cache for previous matching request
-          <br />
-          4.b. If found, check cache timestamp <br />
-          4.c. If data is not stale return data, otherwise continue <br />
-        </li>
-        <li>Request made to Supabase</li>
-      </ol>
-    </section>
-    <section class="mb-8 text-sm w-full" id="user-experience">
-      <h2 class="text-xl font-bold mb-4 border-b pb-2">User Experience</h2>
-      <h3 class="text-xl font-semibold mt-6 mb-3">Image Geolocation</h3>
-      <p class="mb-4">
-        The user experience of adding spots around the globe is streamlined by
-        extracting image geolocation data (if available) to automatically move
-        map pins to their correct location.
-      </p>
-      <div class="my-6">
-        <img
-          src="/assets/spot-hub/spot-upload.gif"
-          alt="Spot upload demonstration"
-          class="w-full"
-        />
-      </div>
-      <p class="mb-4">
-        The batch upload features allows up to 50 images to be selected at once.
-        It uses image geolocation data to automatically group images in close
-        proximity together (i.e. photos of the same spot). A drag and drop
-        interface then allows the user to make any corrections to the groups
-        before creating each spot individually.
-      </p>
-      <div class="my-6">
-        <img
-          src="/assets/spot-hub/batch-upload.gif"
-          alt="Batch upload demonstration"
-          class="w-full"
-        />
-      </div>
-      <h3 class="text-xl font-semibold mt-6 mb-3">AI Image Analysis</h3>
-      <p class="mb-4">
-        To enhance the image tagging process, Google's Gemini AI is used to analyse spot 
-        images along with a predefined prompt to generate a set of suggested tags.
-      </p>
-      <div class="my-6">
-        <img
-          src="/assets/spot-hub/tag-suggestions.gif"
-          alt="AI Tag Suggestions demonstration"
-          class="w-full"
-        />
-      </div>
-    </section>
-    <section class="mb-8 text-sm w-full" id="next-steps">
-      <h2 class="text-xl font-bold mb-4 border-b pb-2">Next Steps</h2>
-      <h3 class="text-xl font-semibold mt-6 mb-3">Beta Release Goals</h3>
-      <ul class="list-disc pl-6 space-y-2">
-        <li>
-          <strong class="text-md font-bold mb-1"
-            >Instagram API Integration:</strong
-          >
-          To display related posts for each map pin
-        </li>
-        <li>
-          <strong class="text-md mt-1 font-bold mb-1"
-            >Youtube API Integration:</strong
-          >
-          To display related Youtube videos for each map pin, with timestamped
-          playback
-        </li>
-        <li>
-          <strong class="text-md mt-1 font-bold mb-1">Facebook Auth:</strong>
-          Implement Facebook Auth and make it the default login option as it
-          affects Instagram API limits
-        </li>
-        <li>
-          <strong class="text-md mt-1 font-bold mb-1">Code Rabbit:</strong> For
-          AI powered code reviews
-        </li>
-        <li>
-          <strong class="text-md mt-1 font-bold mb-1">PostHog:</strong> For Web
-          Analytics, session recording and A/B testing
-        </li>
-        <li>
-          <strong class="text-md font-bold mt-1 mb-1">Stripe:</strong> For
-          handling a tiered pricing model to advanced app features
-        </li>
-        <li>
-          <strong class="text-md mt-1 font-bold mb-1">Vitest/RTL:</strong>
-          Improve test coverage across codebase
-        </li>
-        <li>
-          <strong class="text-md mt-1 font-bold mb-1"
-            >Playwright/Cypress:</strong
-          >
-          Add end-to-end test coverage
-        </li>
-      </ul>
-      <h3 class="text-xl font-semibold mt-6 mb-3">
-        Speculative Future Enhancements
-      </h3>
-      <ul class="list-disc pl-6 space-y-2">
-        <li>
-          <strong>Legend State</strong> or <strong>Zero Sync</strong> for
-          local-first database syncing
-        </li>
-        <li>
-          <strong>TypeScript</strong> for type safety and improved developer experience as the app grows in complexity
-        </li>
-        <li>
-          <strong>Remix</strong> or <strong>Waku</strong> as a more performant
-          alternative to NextJS
-        </li>
-        <li>
-          <strong>Svelte</strong>, <strong>SolidJS</strong> or
-          <strong>Astro</strong> as a more performant alternative to React
-        </li>
-      </ul>
-    </section>
-  </div>
-</div>
-
     </div>
+  </div>
+</section>
+
   </body>
 </html>

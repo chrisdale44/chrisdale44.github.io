@@ -1,15 +1,49 @@
 ---
-title: Christopher Dale Portfolio
+title: Prints 'n' Photos — Christopher Dale
 layout: layouts/base.njk
 ---
+{% include "case-study-styles.njk" %}
 
-<div class="flex flex-col items-center text-md bg-white border-none focus:outline-none [box-shadow:rgba(0,_0,_0,_0.3)_0px_1px_4px_-1px] rounded min-w-[340px] overflow-hidden">
-    <div class="bg-[#157] flex align-center justify-center items-center text-center w-full relative">
-        <a href="/" class="text-white absolute left-4 block p-2">
-            {% include "back-button.njk" %}
-        </a>
-        <h1 class="pacifico text-white text-2xl sm:text-4xl p-4">Prints 'n' Photos</h1>
+<nav class="nav">
+  <a href="/" class="nav-logo">CD</a>
+  <a href="/" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back
+  </a>
+</nav>
+
+<section class="cs-hero">
+  <div class="cs-hero-inner">
+    <p class="section-tag fade-in">Dissertation Project &mdash; University of Southampton</p>
+    <h1 class="cs-title fade-in delay-1">Prints&nbsp;'n'<br>Photos.</h1>
+    <p class="cs-subtitle fade-in delay-2">A gallery website for a private fine art collector, built as my final year university project. First Class Honours.</p>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="cs-inner">
+    <img src="/assets/printsnphotos/main.jpg" alt="Prints n Photos website" class="cs-image fade-in">
+    <div class="cs-content-grid fade-in delay-1">
+      <div>
+        <h2 class="tech-heading">Tech Stack</h2>
+        <div class="tech-tags">
+          <span class="tech-tag">PHP</span>
+          <span class="tech-tag">jQuery</span>
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+        </div>
+      </div>
+      <div>
+        <h2 class="tech-heading">About the Project</h2>
+        <ul class="cs-bullets">
+          <li>Built a full-stack gallery website for a private fine art collector as my final year university dissertation project.</li>
+          <li>Handled all phases of the Web Development Lifecycle &mdash; requirements gathering, UI/UX design, development, testing, and A/B testing.</li>
+          <li>Commended for clean, user-focused design and end-to-end ownership from brief to delivery.</li>
+        </ul>
+      </div>
     </div>
+  </div>
+</section>
     <div class="p-8 flex justify-center text-[#333]">
         <section>
             <div class="max-w-[560px] text-sm">

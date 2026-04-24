@@ -1,15 +1,63 @@
 ---
-title: Christopher Dale Portfolio
+title: First Utility — Christopher Dale
 layout: layouts/base.njk
 ---
+{% include "case-study-styles.njk" %}
 
-<div class="flex flex-col items-center text-md bg-white border-none focus:outline-none [box-shadow:rgba(0,_0,_0,_0.3)_0px_1px_4px_-1px] rounded min-w-[340px] overflow-hidden">
-    <div class="bg-[#157] flex align-center justify-center items-center text-center w-full relative">
-        <a href="/" class="text-white absolute left-4 block p-2">
-            {% include "back-button.njk" %}
-        </a>
-        <h1 class="pacifico text-white text-2xl sm:text-4xl p-4">First Utility</h1>
+<nav class="nav">
+  <a href="/" class="nav-logo">CD</a>
+  <a href="/" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back
+  </a>
+</nav>
+
+<section class="cs-hero">
+  <div class="cs-hero-inner">
+    <p class="section-tag fade-in">Case Study</p>
+    <h1 class="cs-title fade-in delay-1">First Utility.</h1>
+    <p class="cs-subtitle fade-in delay-2">Rebuilding the First Utility website following a full redesign &mdash; responsive pages and data visualisation ownership.</p>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="cs-inner">
+    <div class="before-after fade-in">
+      <div class="before-after-item">
+        <img src="/assets/first-utility/old.jpg" alt="First Utility website before">
+        <p class="img-label">Before</p>
+      </div>
+      <div class="before-after-item">
+        <img src="/assets/first-utility/main.jpg" alt="First Utility website after">
+        <p class="img-label">After</p>
+      </div>
     </div>
+    <div class="cs-content-grid fade-in delay-1">
+      <div>
+        <h2 class="tech-heading">Tech Stack</h2>
+        <div class="tech-tags">
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">jQuery</span>
+          <span class="tech-tag">Backbone.js</span>
+          <span class="tech-tag">Highcharts</span>
+          <span class="tech-tag">D3.js</span>
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">Bootstrap</span>
+          <span class="tech-tag">GitHub</span>
+          <span class="tech-tag">Responsive Design</span>
+        </div>
+      </div>
+      <div>
+        <h2 class="tech-heading">Experience</h2>
+        <ul class="cs-bullets">
+          <li>Worked in a cross-functional Agile team to rebuild the First Utility website following a full redesign.</li>
+          <li>Converted wireframes into fully responsive web pages and took ownership of data visualisation projects.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
     <div class="p-8 text-[#333]">
         <section class="flex justify-center">
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-8">
