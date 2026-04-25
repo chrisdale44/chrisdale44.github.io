@@ -679,16 +679,17 @@
     gap: 0.75rem;
   }
   .photo-grid .photo-item:first-child {
-    grid-column: 1 / 3;
+    grid-column: 1 / span 2;
     grid-row: 1;
   }
+  .photo-grid .photo-item:last-child {
+    grid-column: 2 / span 2;
+    grid-row: 3;
+  }
   .photo-item {
-    overflow: hidden;
     background: #1a1a1a;
-    aspect-ratio: 4/3;
     position: relative;
   }
-  .photo-item.tall { aspect-ratio: 2/3; }
   .photo-item img {
     width: 100%; height: 100%;
     object-fit: cover;
@@ -903,13 +904,13 @@
     <div class="about-grid">
       <div class="fade-in">
         <p class="section-tag">The person</p>
-        <h2 class="about-quote">Clean code, creative problems, and the spirit of skateboarding.</h2>
+        <h2 class="about-quote">Clean code, creative problems, and high performance solutions.</h2>
       </div>
       <div class="fade-in delay-2">
         <div class="about-text">
-          <p>Full stack engineer with 8+ years' experience, specialising in front-end development and delivering high-performance web applications. I've worked across scale-ups and non-profits, from rebuilding ASOS's platform for 20 million users to co-developing Shelter's design system, always focused on clean, accessible, and scalable solutions.</p>
-          <p>Outside of the day job I'm the founder of <strong>Nth Dimension Labs</strong>, an entrepreneurial venture studio where I independently design, architect and ship products from scratch. My flagship project is <strong>Crust Central</strong>, a full-stack PWA for the global skateboarding community.</p>
-          <p>When I'm not writing code I'm behind a camera, shooting skateboard photography and videography. My work is shaped by movement, contrast, and a lifelong love of skating.</p>
+          <p>Full stack engineer with 8+ years' professional experience, specialising in front-end development and delivering high-performance web applications. I've worked across scale-ups and non-profits, from rebuilding ASOS's platform for 20 million users to co-developing Shelter's design system, always focused on clean, accessible and performance optimised solutions.</p>
+          <p>Following a sabbatical, I founded <strong>Nth Dimension Labs</strong>, an entrepreneurial venture studio for building and shipping creative and experimental side-projects. My flagship project is <strong>Crust Central</strong>, a Progressive Web App for the global skateboarding community.</p>
+          <p>When I'm not writing code I'm behind the lens of a camera, shooting skateboard photography and videography. My work is shaped by a lifelong love of skating and visual storytelling.</p>
         </div>
       </div>
     </div>
@@ -939,13 +940,12 @@
               <div class="skill-bar-header"><span class="skill-bar-name">React</span><span class="skill-bar-years">8+ yrs</span></div>
               <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
             </div>
-            
             <div class="skill-bar-item" style="--bar-width:53%">
               <div class="skill-bar-header"><span class="skill-bar-name">Jest / Vitest</span><span class="skill-bar-years">8+ yrs</span></div>
               <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
             </div>
             <div class="skill-bar-item" style="--bar-width:27%">
-              <div class="skill-bar-header"><span class="skill-bar-name">Next.js</span><span class="skill-bar-years">4+ yrs</span></div>
+              <div class="skill-bar-header"><span class="skill-bar-name">NextJS</span><span class="skill-bar-years">4+ yrs</span></div>
               <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
             </div>
             <div class="skill-bar-item" style="--bar-width:27%">
@@ -956,13 +956,8 @@
               <div class="skill-bar-header"><span class="skill-bar-name">Jotai</span><span class="skill-bar-years">4+ yrs</span></div>
               <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
             </div>
-            
             <div class="skill-bar-item" style="--bar-width:20%">
               <div class="skill-bar-header"><span class="skill-bar-name">Redux</span><span class="skill-bar-years">3+ yrs</span></div>
-              <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
-            </div>
-            <div class="skill-bar-item" style="--bar-width:20%">
-              <div class="skill-bar-header"><span class="skill-bar-name">PostgreSQL</span><span class="skill-bar-years">3+ yrs</span></div>
               <div class="skill-bar-track"><div class="skill-bar-fill"></div></div>
             </div>
             <div class="skill-bar-item" style="--bar-width:13%">
@@ -985,19 +980,38 @@
         <div class="skills-group fade-in delay-3">
           <p class="skills-group-title">Further Skills</p>
           <div class="skills-tags">
-            <span class="skill-tag">GraphQL</span>
-            <span class="skill-tag">REST APIs</span>
-            <span class="skill-tag">PWA / Service Workers</span>
-            <span class="skill-tag">GitHub Actions</span>
-            <span class="skill-tag">Supabase</span>
-            <span class="skill-tag">Deck.gl / MapLibre</span>
-            <span class="skill-tag">D3.js</span>
-            <span class="skill-tag">WebGL</span>
-            <span class="skill-tag">Contentful CMS</span>
-            <span class="skill-tag">Storybook</span>
-            <span class="skill-tag">Cloudinary</span>
-            <span class="skill-tag">DexieJS</span>
             <span class="skill-tag">A11y (WCAG 2.1)</span>
+            <span class="skill-tag">UX</span>
+            <span class="skill-tag">Responsive Design</span>
+            <span class="skill-tag">SEO</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">GraphQL</span>
+            <span class="skill-tag">Gatsby</span>
+            <span class="skill-tag">SQL/ PostgreSQL</span>
+            <span class="skill-tag">NoSQL</span>
+            <span class="skill-tag">Supabase</span>
+            <span class="skill-tag">Contentful CMS</span>
+            <span class="skill-tag">ShadCN / Radix</span>
+            <span class="skill-tag">Styled Components</span>
+            <span class="skill-tag">SCSS</span>
+            <span class="skill-tag">WebGL (DeckGL / PixiJS)</span>
+            <span class="skill-tag">MapLibre / Mapbox</span>
+            <span class="skill-tag">React Query</span>
+            <span class="skill-tag">React Hook Form</span>
+            <span class="skill-tag">Zod</span>
+            <span class="skill-tag">Data Visualisation (D3.js)</span>
+            <span class="skill-tag">IndexedDB (DexieJS)</span>
+            <span class="skill-tag">Service Workers (Serwist)</span>
+            <span class="skill-tag">Storybook</span>
+            <span class="skill-tag">Lighthouse</span>
+            <span class="skill-tag">Figma</span>
+            <span class="skill-tag">CI/CD</span>
+            <span class="skill-tag">GitHub Actions</span>
+            <span class="skill-tag">Cloudinary</span>
+            <span class="skill-tag">Cloudflare</span>
+            <span class="skill-tag">CDNs</span>
+            <span class="skill-tag">Cloud Deployment</span>
+            <span class="skill-tag">Netlify</span>
           </div>
         </div>
       </div>
@@ -1015,10 +1029,10 @@
       <div class="project-featured-text fade-in delay-1">
         <p class="project-kicker">Featured project · 2023–Present</p>
         <h3 class="project-name">Crust Central</h3>
-        <p class="project-desc">A Progressive Web App for discovering, cataloguing and sharing skateboarding spots worldwide. Users explore an interactive WebGL map, browse a media feed, submit their own spots, and compete on a leaderboard, all with offline-first performance.</p>
-        <p class="project-desc">Independently responsible for the full software development lifecycle, from architecture and database design to CI/CD, hosting, and product iteration informed by user feedback.</p>
+        <p class="project-desc">A Progressive Web App for discovering, cataloguing and sharing the rugged terrain of skateboarding spots - commonly referred to as "crust" amongst the skateboarding community. Users explore an interactive WebGL map, browse a media feed, submit their own photographs and videos and compete on a leaderboard, all with offline-first performance.</p>
+        <p class="project-desc">Independently responsible for the full software development lifecycle, from design to delivery, and product iteration informed by user feedback.</p>
         <a href="/crust-central" class="exp-link" style="color:rgba(240,236,228,0.85);border-bottom-color:rgba(240,236,228,0.5);">Read More →</a>
-        
+
         <div class="project-stats">
           <div>
             <span class="stat-value">PWA</span>
@@ -1038,25 +1052,31 @@
           </div>
         </div>
         <div class="tech-tags">
-          <span class="tech-tag">Next.JS</span>
+          <span class="tech-tag">NextJS</span>
+          <span class="tech-tag">React</span>
+          <span class="tech-tag">NodeJS</span>
+          <span class="tech-tag">TypeScript</span>
           <span class="tech-tag">Supabase + PostGIS</span>
-          <span class="tech-tag">Deck.gl</span>
+          <span class="tech-tag">DeckGL</span>
           <span class="tech-tag">MapLibre</span>
           <span class="tech-tag">Jotai</span>
           <span class="tech-tag">Tailwind</span>
           <span class="tech-tag">ShadCN</span>
           <span class="tech-tag">Gemini AI</span>
-          <span class="tech-tag">IndexedDB</span>
+          <span class="tech-tag">Zod</span>
+          <span class="tech-tag">Serwist</span>
+          <span class="tech-tag">DexieJS</span>
           <span class="tech-tag">Cloudinary</span>
           <span class="tech-tag">Cloudflare</span>
           <span class="tech-tag">Upstash</span>
           <span class="tech-tag">Netlify</span>
           <span class="tech-tag">GitHub Actions</span>
           <span class="tech-tag">PostHog</span>
+          <span class="tech-tag">Vitest</span>
         </div>
       </div>
       <div class="fade-in delay-2" style="display:flex;flex-direction:column;align-items:center;">
-        <a href="https://crustcentral.com" target="_blank" rel="noopener noreferrer"><img src="/assets/spot-hub/main.jpg" alt="Crust Central app screenshot" class="project-image" /></a>
+        <a href="https://crustcentral.com" target="_blank" rel="noopener noreferrer"><img src="/assets/crust-central/crust-central.jpg" alt="Crust Central app screenshot" class="project-image" /></a>
         <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.75rem;">
           <a href="https://crustcentral.com" target="_blank" rel="noopener noreferrer" class="btn btn-light">Visit Crust Central ↗</a>
         </div>
@@ -1202,8 +1222,7 @@
           <p class="section-tag" style="margin-bottom:0.8rem;">Dissertation Project</p>
           <p style="font-family:var(--font-serif);font-size:1.3rem;margin-bottom:0.8rem;">printsnphotos.com</p>
           <ul class="exp-bullets">
-            <li>Built a full-stack gallery website for a private fine art collector, handling all phases of the Web Development Lifecycle: requirements gathering, UI/UX design, development, testing, and A/B testing.</li>
-            <li>Commended for clean, user-focused design and end-to-end ownership from brief to delivery.</li>
+            <li>A full-stack gallery website built for a fine art collector, during which I was responsible for end-to-end delivery including requirements gathering, UI/UX design, development, testing, and A/B testing.</li>
           </ul>
           <img src="/assets/printsnphotos/main.jpg" alt="printsnphotos.com" class="exp-project-img" />
           <a href="/printsnphotos" class="exp-link">Read more &rarr;</a>
@@ -1220,45 +1239,29 @@
         <h2 class="section-heading fade-in delay-1">Film &amp; Photography</h2>
         <p class="fade-in delay-2" style="font-size:0.82rem;opacity:0.45;margin-top:0.8rem;letter-spacing:0.04em;">Photoshop &nbsp;&middot;&nbsp; Lightroom &nbsp;&middot;&nbsp; Premiere Pro</p>
       </div>
-      <a href="/photography" class="btn btn-light fade-in delay-2" style="align-self:center;">View Full Gallery &nearr;</a>
     </div>
 
     <div class="photo-grid fade-in">
       <div class="photo-item">
-        <div class="photo-placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-          <span>Photo coming soon</span>
-        </div>
+        <img src="/assets/photography/photog-0.jpg" alt="Skateboard photography" class="photo-thumb" />
       </div>
       <div class="photo-item">
-        <div class="photo-placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-          <span>Photo coming soon</span>
-        </div>
+        <img src="/assets/photography/photog-1.webp" alt="Skateboard photography" class="photo-thumb" />
       </div>
       <div class="photo-item">
-        <div class="photo-placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-          <span>Photo coming soon</span>
-        </div>
+        <img src="/assets/photography/photog-2.jpg" alt="Skateboard photography" class="photo-thumb" />
       </div>
       <div class="photo-item">
-        <div class="photo-placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-          <span>Photo coming soon</span>
-        </div>
+        <img src="/assets/photography/photog-3.jpg" alt="Skateboard photography" class="photo-thumb" />
       </div>
       <div class="photo-item">
-        <div class="photo-placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-          <span>Photo coming soon</span>
-        </div>
+        <img src="/assets/photography/photog-4.webp" alt="Skateboard photography" class="photo-thumb" />
       </div>
       <div class="photo-item">
-        <div class="photo-placeholder">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="m21 15-5-5L5 21"/></svg>
-          <span>Photo coming soon</span>
-        </div>
+        <img src="/assets/photography/photog-5.jpg" alt="Skateboard photography" class="photo-thumb" />
+      </div>
+      <div class="photo-item">
+        <img src="/assets/photography/photog-6.jpg" alt="Skateboard photography" class="photo-thumb" />
       </div>
     </div>
 
@@ -1288,10 +1291,10 @@
           <iframe src="https://www.youtube.com/embed/SCOBB4M7kZ8" title="Skate video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
         </div>
         <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/dtIeS8onYXw" title="Skate video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://www.youtube.com/embed/tI5_jjbQNkQ" title="Skate video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
         </div>
         <div class="video-embed">
-          <iframe src="https://www.youtube.com/embed/LPtJfccSNCU" title="Skate video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://www.youtube.com/embed/dtIeS8onYXw" title="Skate video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe>
         </div>
       </div>
     </div>
