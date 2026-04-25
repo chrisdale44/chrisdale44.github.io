@@ -598,7 +598,6 @@
   .exp-project-img {
     width: 100%;
     padding: 1rem 2rem;
-    aspect-ratio: 16/9;
     object-fit: cover;
     margin-top: 1.2rem;
     
@@ -611,32 +610,28 @@
     border: 1px solid var(--border);
     background: #d8d2c9;
   }
-  .exp-compare img {
+  .exp-compare-after {
+    display: block;
     width: 100%;
     height: auto;
-    display: block;
-    pointer-events: none;
-  }
-  .exp-compare-after {
     position: relative;
     z-index: 1;
+    pointer-events: none;
   }
-  .exp-compare-before-wrap {
+  .exp-compare-before {
+    display: block;
+    width: 100%;
+    height: auto;
     position: absolute;
-    inset: 0;
-    width: 0%;
-    overflow: hidden;
-    border-right: 2px solid rgba(255,255,255,0.8);
+    top: 0;
+    left: 0;
     z-index: 2;
     pointer-events: none;
-    transition: width 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.55s cubic-bezier(0.2, 0.8, 0.2, 1);
   }
-  .exp-compare-before-wrap img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .exp-compare-before.show {
+    clip-path: inset(0 0% 0 0);
   }
 
   .exp-compare-controls {
@@ -679,7 +674,7 @@
     text-transform: uppercase;
     padding: 0.25rem 0.65rem;
     border: 1px solid var(--border);
-    background: #fff;
+    background: transparent;
     color: #4a4a4a;
   }
 
@@ -1107,7 +1102,7 @@
           <div class="skills-tags">
             <span class="skill-tag">A11y (WCAG 2.1)</span>
             <span class="skill-tag">UX</span>
-            <span class="skill-tag">Responsive Design</span>
+            <span class="skill-tag">Responsive UI</span>
             <span class="skill-tag">SEO</span>
             <span class="skill-tag">REST APIs</span>
             <span class="skill-tag">GraphQL</span>
@@ -1201,7 +1196,9 @@
         </div>
       </div>
       <div class="fade-in delay-2" style="display:flex;flex-direction:column;align-items:center;">
-        <a href="https://crustcentral.com" target="_blank" rel="noopener noreferrer"><img src="/assets/crust-central/crust-central.jpg" alt="Crust Central app screenshot" class="project-image" /></a>
+        <div class="photo-item">
+            <img src="/assets/crust-central/crust-central.jpg" alt="Crust Central app screenshot" class="project-image photo-thumb" />
+        </div>
         <div style="display:flex;gap:0.75rem;flex-wrap:wrap;margin-top:0.75rem;">
           <a href="https://crustcentral.com" target="_blank" rel="noopener noreferrer" class="btn btn-light">Visit Crust Central ↗</a>
         </div>
@@ -1259,17 +1256,15 @@
             <li>Line managed and mentored junior team members through regular 1:1s and pair programming.</li>
           </ul>
           <div class="exp-compare" data-compare>
-            <img src="/assets/shelter/main.jpg" alt="Shelter website after replatform" class="exp-compare-after" />
-            <div class="exp-compare-before-wrap" data-before-wrap>
-              <img src="/assets/shelter/old.jpg" alt="Shelter website before replatform" />
-            </div>
+            <img src="/assets/shelter/main.jpg" alt="Shelter website after replatform" class="exp-compare-after photo-thumb" />
+            <img src="/assets/shelter/old.jpg" alt="Shelter website before replatform" class="exp-compare-before photo-thumb" data-before />
           </div>
           <div class="exp-compare-controls" role="tablist" aria-label="Shelter before and after view">
             <button type="button" class="exp-compare-toggle" data-compare-target="before" aria-pressed="false">Before</button>
             <button type="button" class="exp-compare-toggle active" data-compare-target="after" aria-pressed="true">After</button>
           </div>
           <div class="exp-stack-tags">
-            <span>React</span><span>JavaScript</span><span>Styled Components</span><span>Contentful CMS</span><span>Jest</span><span>Cypress</span><span>WCAG</span>
+            <span>React</span><span>JavaScript</span><span>Styled Components</span><span>Contentful CMS</span><span>Storybook</span><span>Jest</span><span>Cypress</span><span>A11y</span><span>Responsive UI</span>
           </div>
         </div>
 
@@ -1280,24 +1275,22 @@
             <span class="exp-date">May 2017 — July 2019</span>
           </div>
           <ul class="exp-bullets">
-            <li>Collaborated within a cross-functional Agile team to replatform the ASOS website on a microservices architecture, delivering performance and scalability improvements for 20 million active users.</li>
+            <li>Collaborated within a cross-functional Agile team to replatform the ASOS website on a micro-frontends architecture, delivering performance and scalability improvements for 20 million active users.</li>
             <li>Followed TDD practices to deliver robust, reusable, and scalable unit-tested code.</li>
             <li>Actively contributed to Agile ceremonies and team technical discussions.</li>
             <li>Upheld coding standards and codebase maintainability through regular code reviews.</li>
             <li>Mentored junior team members through regular pair programming sessions.</li>
           </ul>
-          <div class="exp-compare" data-compare>
+          <div class="exp-compare" data-compare> 
             <img src="/assets/asos/main.jpg" alt="ASOS website after replatform" class="exp-compare-after" />
-            <div class="exp-compare-before-wrap" data-before-wrap>
-              <img src="/assets/asos/old.jpg" alt="ASOS website before replatform" />
-            </div>
+            <img src="/assets/asos/old.jpg" alt="ASOS website before replatform" class="exp-compare-before" data-before />
           </div>
           <div class="exp-compare-controls" role="tablist" aria-label="ASOS before and after view">
             <button type="button" class="exp-compare-toggle" data-compare-target="before" aria-pressed="false">Before</button>
             <button type="button" class="exp-compare-toggle active" data-compare-target="after" aria-pressed="true">After</button>
           </div>
           <div class="exp-stack-tags">
-            <span>React</span><span>JavaScript</span><span>Node.js</span><span>Jest</span><span>Cypress</span><span>Microservices</span><span>A/B Testing</span>
+            <span>HTML</span><span>CSS Modules</span><span>React</span><span>Redux</span><span>JavaScript</span><span>NodeJS</span><span>Jest</span><span>Cypress</span><span>Micro-frontends</span><span>A/B Testing</span><span>Responsive UI</span>
           </div>
         </div>
 
@@ -1313,16 +1306,9 @@
           </ul>
           <div class="exp-compare" data-compare>
             <img src="/assets/ready-business/main.jpg" alt="Vodafone Ready Business product website" class="exp-compare-after" />
-            <div class="exp-compare-before-wrap" data-before-wrap>
-              <img src="/assets/ready-business/full-report.jpg" alt="Legacy Vodafone Ready Business report experience" />
-            </div>
-          </div>
-          <div class="exp-compare-controls" role="tablist" aria-label="Vodafone before and after view">
-            <button type="button" class="exp-compare-toggle" data-compare-target="before" aria-pressed="false">Before</button>
-            <button type="button" class="exp-compare-toggle active" data-compare-target="after" aria-pressed="true">After</button>
           </div>
           <div class="exp-stack-tags">
-            <span>JavaScript</span><span>jQuery</span><span>D3.js</span><span>SCSS</span><span>Highcharts</span><span>Responsive Design</span>
+            <span>HTML</span><span>SCSS</span><span>JavaScript</span><span>jQuery</span><span>D3.js</span><span>Highcharts</span><span>Responsive UI</span>
           </div>
           <a href="/vodafone" class="exp-link">Read more →</a>
         </div>
@@ -1339,16 +1325,14 @@
           </ul>
           <div class="exp-compare" data-compare>
             <img src="/assets/first-utility/main.jpg" alt="First Utility website after redesign" class="exp-compare-after" />
-            <div class="exp-compare-before-wrap" data-before-wrap>
-              <img src="/assets/first-utility/old.jpg" alt="First Utility website before redesign" />
-            </div>
+            <img src="/assets/first-utility/old.jpg" alt="First Utility website before redesign" class="exp-compare-before" data-before />
           </div>
           <div class="exp-compare-controls" role="tablist" aria-label="First Utility before and after view">
             <button type="button" class="exp-compare-toggle" data-compare-target="before" aria-pressed="false">Before</button>
             <button type="button" class="exp-compare-toggle active" data-compare-target="after" aria-pressed="true">After</button>
           </div>
           <div class="exp-stack-tags">
-            <span>JavaScript</span><span>D3.js</span><span>Highcharts</span><span>SCSS</span><span>Responsive UI</span><span>Agile Delivery</span>
+            <span>HTML</span><span>SCSS</span><span>JavaScript</span><span>jQuery</span><span>Responsive UI</span><span>D3.js</span><span>Highcharts</span><span>Knockout.js</span>
           </div>
         </div>
 
@@ -1376,7 +1360,7 @@
             <li>Worked as part of a cross-functional team to develop features and resolve bugs across the full stack.</li>
           </ul>
           <div class="exp-stack-tags">
-            <span>Java</span><span>Spring</span><span>JavaScript</span><span>HTML</span><span>CSS</span><span>SQL</span>
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>SQL</span>
           </div>
         </div>
       </div>
@@ -1398,13 +1382,17 @@
         </div>
         <div class="edu-right">
           <p class="section-tag" style="margin-bottom:0.8rem;">Dissertation Project</p>
-          <p style="font-family:var(--font-serif);font-size:1.3rem;margin-bottom:0.8rem;">printsnphotos.com</p>
+          <p style="font-family:var(--font-serif);font-size:1.3rem;margin-bottom:0.4rem;">printsnphotos.com</p>
+          <span class="edu-date" style="display:block;margin-bottom:0.8rem;">Sept 2010 – May 2011</span>
           <ul class="exp-bullets">
             <li>Built a full-stack gallery website for a private fine art collector as my final year university dissertation project.</li>
             <li>Handled all phases of the Web Development Lifecycle including requirements gathering, UI/UX design, development, testing, and A/B testing.</li>
             <li>Commended for clean, user-focused design and end-to-end ownership from brief to delivery.</li>
           </ul>
           <img src="/assets/printsnphotos/main.jpg" alt="printsnphotos.com" class="exp-project-img" />
+          <div class="exp-stack-tags">
+            <span>PHP</span><span>HTML</span><span>CSS</span><span>jQuery</span><span>SQL</span>
+          </div>
         </div>
       </div>
     </div>
@@ -1592,13 +1580,13 @@
   // Click-to-swipe before/after for professional experience images
   document.querySelectorAll('.exp-item').forEach((item) => {
     const compare = item.querySelector('[data-compare]');
-    const beforeWrap = item.querySelector('[data-before-wrap]');
+    const beforeImg = compare ? compare.querySelector('[data-before]') : null;
     const controls = item.querySelectorAll('.exp-compare-toggle');
-    if (!compare || !beforeWrap || controls.length === 0) return;
+    if (!compare || !beforeImg || controls.length === 0) return;
 
     const setMode = (mode) => {
       const showBefore = mode === 'before';
-      beforeWrap.style.width = showBefore ? '100%' : '0%';
+      beforeImg.classList.toggle('show', showBefore);
       compare.setAttribute('data-mode', mode);
 
       controls.forEach((button) => {
