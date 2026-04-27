@@ -112,8 +112,9 @@
   /* Bullets */
   .cs-bullets { list-style: none; padding: 0; }
   .cs-bullets li {
-    font-size: 0.9rem; line-height: 1.65; color: var(--mid);
-    padding: 0.75rem 0; border-bottom: 1px solid var(--border);
+    font-size: 0.9rem; 
+    line-height: 1.65; color: var(--mid);
+    padding: 0.75rem 0; 
     padding-left: 1.2rem; position: relative;
   }
   .cs-bullets li::before {
@@ -191,7 +192,8 @@
     font-family: var(--font-serif); font-size: 1.2rem;
     letter-spacing: -0.01em; margin-top: 2.5rem; margin-bottom: 1rem;
   }
-  .cs-img-block { margin: 1.5rem 0; border-radius: 4px; overflow: hidden; border: 1px solid var(--border); }
+  .cs-image { width: auto; max-width: 600px; }
+  .cs-img-block { margin: 1.5rem 0; border-radius: 4px; overflow: hidden; }
   .cs-img-block img { width: 100%; display: block; }
   .cs-img-cap { font-size: 0.68rem; text-align: center; opacity: 0.4; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-top: 0.5rem; }
   .objectives-grid {
@@ -208,6 +210,10 @@
     .objectives-grid { grid-template-columns: 1fr; }
     .next-steps-grid { grid-template-columns: 1fr; }
   }
+  .flow-list { list-style: number; padding: 0.5rem 0; margin-left: 1.5rem; }
+  .flow-list li {  }
+  .flow-list li ol { list-style: lower-roman; padding: 0.5rem 0; margin-left: 1.5rem; }
+  .flow-list li ol li {  }
 </style>
 
 <nav class="nav">
@@ -222,7 +228,7 @@
   <div class="cs-hero-inner">
     <p class="section-tag fade-in">Personal Project &mdash; Technical Overview</p>
     <h1 class="cs-title fade-in delay-1">Crust<br>Central.</h1>
-    <p class="cs-subtitle fade-in delay-2">A Progressive Web App for discovering and mapping skateboarding spots worldwide &mdash; built with Next.js 15, Supabase, PostGIS, Deck.gl, and Gemini AI.</p>
+    <p class="cs-subtitle fade-in delay-2">A Hybrid Web App for discovering and mapping skateboarding spots worldwide &mdash; built with Next.js 15, Supabase, PostGIS, Deck.gl, and Gemini AI.</p>
   </div>
 </section>
 
@@ -233,8 +239,7 @@
     <div class="cs-content-grid fade-in">
       <div>
         <h2 class="tech-heading">About</h2>
-        <p class="cs-desc">Crust Central is a PWA designed to map skateboarding spots and user-generated media on a global scale. Users can discover spots worldwide, log tricks performed at each location, and contribute their own discoveries.</p>
-        <p class="cs-desc" style="margin-top:1rem;">The codebase is private for security reasons, but <a href="https://github.com/chrisdale44/spot-hub-samples" target="_blank" rel="noopener noreferrer" style="font-weight:600;border-bottom:1px solid var(--dark);">code samples are available on GitHub</a> and full access can be granted on request.</p>
+        <p class="cs-desc">Crust Central is a Hybrid Web app designed to map skateboarding spots and user-generated media on a global scale. Users can discover spots worldwide, log tricks performed at each location, and contribute their own discoveries.</p>
         <a href="https://crustcentral.com" target="_blank" rel="noopener noreferrer" class="cs-cta">Visit crustcentral.com &nearr;</a>
       </div>
       <div>
@@ -326,7 +331,7 @@
         <li><strong>CDN Delivery:</strong> Cloudinary provides low-latency image delivery worldwide.</li>
         <li><strong>Auto-optimisation:</strong> Images are compressed, converted to WebP, resized to 1000px maximum, and watermarked on upload.</li>
         <li><strong>Thumbnails:</strong> 200&times;200px thumbnails are auto-generated for fast-loading map pin previews.</li>
-        <li><strong>Lazy loading:</strong> IntersectionObserver API + Next.js Image component reduce initial page load.</li>
+        <li><strong>Lazy loading:</strong> IntersectionObserver API + NextJS Image component reduce initial page load.</li>
         <li><strong>SVG icons:</strong> Lightweight, scalable, no HTTP requests.</li>
         <li><strong>Service Worker:</strong> Caches images in the browser cache API to reduce repeat requests.</li>
       </ul>
@@ -345,18 +350,37 @@
         <img src="/assets/spot-hub/fetching-3.jpg" alt="Dynamic grid fetching visualisation">
       </div>
 
-      <h3 class="cs-h3">Local-First Caching Strategy</h3>
+      <h3 class="cs-h3">Data Flow Diagram</h3>
       <div class="cs-img-block">
-        <img src="/assets/spot-hub/caching.png" alt="Crust Central caching strategy diagram">
+        <img src="/assets/crust-central/crust-central-caching-diagram.jpg" alt="Crust Central caching strategy diagram">
       </div>
-      <p class="cs-desc" style="margin-bottom:0.8rem;">The flow for fetching spot data:</p>
-      <ul class="cs-bullets">
-        <li>Check IndexedDB &rarr; if found and not stale, return data</li>
-        <li>Call Server Action (running on Netlify Edge)</li>
-        <li>Check Redis cache &rarr; if found and not stale, return data</li>
-        <li>HTTP fetch to Supabase &rarr; edge server checks in-memory cache first</li>
-        <li>Request made to Supabase as final fallback</li>
-      </ul>
+      <ol class="flow-list"> 
+        <li>Client browser makes an HTTP request to the server (Netlify CDN) 
+          <ol> 
+            <li>The request includes the Cache Manifest Cookie, if it exists on the user's device (i.e. not their first visit). The Cache Manifest Cookie contains timestamps indicating what data is already cached locally in IndexedDB.</li> 
+          </ol> 
+        </li> 
+        <li>The server reads the Cache Manifest Cookie (if present) and selectively decides which data to fetch: 
+          <ol> 
+            <li>For each data type (tags, categories, spots, etc.), if the cookie indicates the client has fresh data in IndexedDB, that fetch is skipped entirely.</li>
+            <li>For data without a fresh cache entry, a promise is created. All such promises are fired in parallel without being awaited.</li>
+          </ol>
+        </li> 
+        <li>The server immediately begins streaming the page response to the client. The initial HTML shell renders right away. For data that needs to be fetched, the server resolves each fetch against multiple cache layers in order: 
+          <ol> 
+            <li>Next.js Data Cache (Netlify Blob Storage)</li> 
+            <li>Upstash Redis Cache</li> 
+            <li>Supabase REST API — a direct HTTP fetch to the PostGIS database, used only on a full cache miss</li> 
+          </ol> 
+        </li> 
+        <li>As each server-side promise resolves, NextJS progressively streams the corresponding rendered component (RSC payload) to the client.</li> 
+        <li>The client receives the streamed components and renders them as they arrive. 
+          <ol> 
+            <li>Resolved data is written to IndexedDB for offline and future use.</li> 
+            <li>The Cache Manifest Cookie is updated with the new cache keys and timestamps.</li> 
+          </ol> 
+        </li> 
+      </ol>
     </div>
   </div>
 </section>
@@ -396,26 +420,21 @@
 <section class="cs-section" style="background:#fff;" id="next-steps">
   <div class="cs-inner">
     <p class="section-tag fade-in">Roadmap</p>
-    <h2 class="tech-heading fade-in delay-1">Next Steps.</h2>
     <div class="next-steps-grid fade-in delay-2">
       <div class="next-steps-col">
-        <h3>Beta Release Goals</h3>
+        <h2 class="tech-heading">Next Steps</h2>
         <ul class="cs-bullets">
-          <li><strong>Instagram API:</strong> Display related posts for each map pin.</li>
-          <li><strong>YouTube API:</strong> Display related videos with timestamped playback.</li>
-          <li><strong>Facebook Auth:</strong> Default login option (affects Instagram API limits).</li>
-          <li><strong>PostHog:</strong> Web analytics, session recording, and A/B testing.</li>
-          <li><strong>Stripe:</strong> Tiered pricing model for advanced features.</li>
+          <li><strong>Stripe:</strong> Freemium pricing model for advanced features.</li>
           <li><strong>Vitest / RTL:</strong> Improve test coverage across codebase.</li>
-          <li><strong>Playwright / Cypress:</strong> End-to-end test coverage.</li>
+          <li><strong>TypeScript:</strong> Convert more of the codebase to TS.</li>
+          <li><strong>Playwright / Cypress:</strong> Add end-to-end test coverage.</li>
         </ul>
       </div>
       <div class="next-steps-col">
-        <h3>Future Enhancements</h3>
+        <h2 class="tech-heading">Future Spikes/ Stretch Goals</h2>
         <ul class="cs-bullets">
-          <li><strong>Legend State</strong> or <strong>Zero Sync</strong> for local-first database syncing.</li>
-          <li><strong>TypeScript</strong> for type safety as the app grows in complexity.</li>
-          <li><strong>Remix</strong> or <strong>Waku</strong> as a more performant Next.js alternative.</li>
+          <li><strong>Legend State</strong> or <strong>Zero Sync</strong> for local-first database syncing.</li>         
+          <li><strong>Remix</strong> or <strong>Waku</strong> as a more performant NextJS alternative.</li>
           <li><strong>Svelte</strong>, <strong>SolidJS</strong>, or <strong>Astro</strong> as a React alternative.</li>
         </ul>
       </div>
