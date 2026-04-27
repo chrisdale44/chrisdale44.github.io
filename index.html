@@ -252,10 +252,12 @@
   }
   .hero-portrait {
     width: 100%;
-    aspect-ratio: 3/4;
+    aspect-ratio: 1/1;
     object-fit: cover;
     object-position: top center;
     display: block;
+    max-height: 350px;
+    max-width: 350px
   }
 
   @media (max-width: 860px) {
@@ -407,7 +409,7 @@
     font-size: 0.95rem;
     line-height: 1.75;
     color: rgba(240,236,228,0.65);
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
   }
   .project-stats {
     display: grid;
@@ -1006,7 +1008,7 @@
       <p class="hero-eyebrow fade-in">Portfolio</p>
       <h1 class="hero-name fade-in delay-1">Christopher<br>Dale</h1>
       <p class="hero-title fade-in delay-2">Full Stack Engineer · Photographer · Founder</p>
-      <p class="hero-bio fade-in delay-3">Based in London, I engineer fast, resilient web experiences and document skateboarding through photography and film.</p>
+      <p class="hero-bio fade-in delay-3">Based in London, I engineer performance-optimised Web experiences and document skateboarding through photography and film.</p>
       <div class="fade-in delay-4" style="display:flex;gap:1rem;flex-wrap:wrap;">
         <a href="#projects" class="btn">Explore Work</a>
         <a href="#contact" class="btn" style="background:transparent;">Get in Touch</a>
@@ -1023,13 +1025,13 @@
   <div class="section-inner">
     <div class="about-grid">
       <div class="fade-in">
-        <p class="section-tag">The person</p>
-        <h2 class="about-quote">Clean code, creative problems, and high performance solutions.</h2>
+        
+        <h2 class="about-quote">Clean code, creative problem solving, and high performance solutions.</h2>
       </div>
       <div class="fade-in delay-2">
         <div class="about-text">
-          <p>Full stack engineer with 8+ years' professional experience, specialising in front-end development and delivering high-performance web applications. I've worked across scale-ups and non-profits, from rebuilding ASOS's platform for 20 million users to co-developing Shelter's design system, always focused on clean, accessible and performance optimised solutions.</p>
-          <p>Following a sabbatical, I founded <strong>Nth Dimension Labs</strong>, an entrepreneurial venture studio for building and shipping creative and experimental side-projects. My flagship project is <strong>Crust Central</strong>, a Progressive Web App for the global skateboarding community.</p>
+          <p>Front-end focused, full stack engineer with 8+ years' industry experience delivering high-performance Web Applications. I've worked across scale-ups and non-profit, from rebuilding ASOS's platform for 20 million users to co-developing Shelter's design system, always focused on clean and performance-optimised solutions that drive meaningful impact.</p>
+          <p>Following a sabbatical, I founded <strong>Nth Dimension Labs</strong>, an entrepreneurial venture studio for building and shipping creative and experimental side-projects. My flagship project is <strong>Crust Central</strong>, a Hybrid Web App for the global skateboarding community.</p>
           <p>When I'm not writing code I'm behind the lens of a camera, shooting skateboard photography and videography. My work is shaped by a lifelong love of skateboarding and visual storytelling.</p>
         </div>
       </div>
@@ -1149,8 +1151,8 @@
       <div class="project-featured-text fade-in delay-1">
         <p class="project-kicker">Featured project · 2023–Present</p>
         <h3 class="project-name">Crust Central</h3>
-        <p class="project-desc">A Progressive Web App for discovering, cataloguing and sharing the rugged terrain of skateboarding spots - commonly referred to as "crust" amongst the skateboarding community. Users explore an interactive WebGL map, browse a media feed, submit their own photographs and videos and compete on a leaderboard, all with offline-first performance.</p>
-        <p class="project-desc">Independently responsible for the full software development lifecycle, from design to delivery, and product iteration informed by user feedback. Built with performance, scalability and security in mind.</p>
+        <p class="project-desc">A Hybrid Web App for discovering, cataloguing and sharing the rugged terrain of skateboarding spots - commonly referred to as "crust" amongst the skateboarding community. Users explore an interactive WebGL map, browse a media feed, submit their own photographs and videos, all with offline-first performance.</p>
+        <p class="project-desc">Independently completed the full software development lifecycle, from design to delivery, utilising latest Web technologies and engineering techniques including AI-driven development.</p>
         <a href="/crust-central" class="exp-link" style="color:rgba(240,236,228,0.85);border-bottom-color:rgba(240,236,228,0.5);">Read More →</a>
 
         <div class="project-stats">
@@ -1164,7 +1166,7 @@
           </div>
           <div>
             <span class="stat-value">AI</span>
-            <span class="stat-label">Integration</span>
+            <span class="stat-label">Development &amp; Integration</span>
           </div>
           <div>
             <span class="stat-value">PostGIS</span>
@@ -1438,9 +1440,10 @@
         <span class="photo-credit-tag">Skateboarders Companion</span>
         <span class="photo-credit-tag">Grey Magazine</span>
         <span class="photo-credit-tag">Slam Magazine</span>
+        <span class="photo-credit-tag">Vague Magazine</span>
         <span class="photo-credit-tag">Damn Magazine</span>
         <span class="photo-credit-tag">Backside Magazine</span>
-        <span class="photo-credit-tag">Dogpiss Magazine</span>
+        
         <span class="photo-credit-tag">Sidewalk Online</span>
       </div>
     </div>
