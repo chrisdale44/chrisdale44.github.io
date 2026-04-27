@@ -89,7 +89,7 @@
   }
 
   /* Single image */
-  .cs-image { border-radius: 4px; border: 1px solid var(--border); width: 100%; margin-bottom: 3rem; }
+  .cs-image { border-radius: 4px; border: 1px solid var(--border); width: auto; margin-bottom: 3rem; max-width: 1000px; object-fit: cover; margin: 1rem auto; }
 
   /* Content grid */
   .cs-content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
@@ -182,34 +182,36 @@
 <section class="cs-hero">
   <div class="cs-hero-inner">
     <p class="section-tag fade-in">Case Study</p>
-    <h1 class="cs-title fade-in delay-1">Vodafone<br>Ready Business.</h1>
+    <h1 class="cs-title fade-in delay-1">Vodafone<br>Ready Business Project.</h1>
     <p class="cs-subtitle fade-in delay-2">A B2B web application deployed across 20 international Vodafone markets, driving product discovery through interactive data visualisation.</p>
   </div>
 </section>
 
 <section class="cs-section">
   <div class="cs-inner">
-    <img src="/assets/ready-business/full-report.jpg" alt="Ready Business full report" class="cs-image fade-in">
+
     <div class="cs-content-grid fade-in delay-1">
       <div>
         <h2 class="tech-heading">Tech Stack</h2>
         <div class="tech-tags">
-          <span class="tech-tag">JavaScript</span>
-          <span class="tech-tag">D3.js</span>
           <span class="tech-tag">HTML</span>
           <span class="tech-tag">CSS</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">jQuery</span>
+          <span class="tech-tag">D3.js</span>
           <span class="tech-tag">Survey Monkey</span>
-          <span class="tech-tag">Responsive Design</span>
+          <span class="tech-tag">Responsive UI</span>
         </div>
       </div>
       <div>
         <h2 class="tech-heading">Experience</h2>
         <ul class="cs-bullets">
-          <li>Led development of a web application promoting Vodafone B2B products through a series of business survey questions followed by a dynamic results page with data visualisation charts.</li>
+          <li>Led the development of a Web application promoting Vodafone B2B products through a series of business survey questions followed by a dynamic results page with data visualisation charts.</li>
           <li>Produced comprehensive documentation and conducted stakeholder training to customise and deploy the tool across 20 international Vodafone websites.</li>
         </ul>
       </div>
     </div>
+    <img src="/assets/ready-business/full-report.jpg" alt="Ready Business full report" class="cs-image fade-in">
   </div>
 </section>
 
