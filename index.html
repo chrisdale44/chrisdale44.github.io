@@ -694,6 +694,13 @@
     display: flex;
     flex-direction: column;
   }
+  .edu-meta {
+    display: flex;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+    flex-wrap: wrap;
+  }
   .edu-item {
     padding: 2.5rem 0;
     border-bottom: 1px solid var(--border);
@@ -714,6 +721,7 @@
     color: var(--muted);
     display: block;
     margin-bottom: 0.6rem;
+    margin-left: auto;
   }
   .edu-degree {
     font-size: 0.88rem;
@@ -1378,22 +1386,22 @@
       <div class="edu-item fade-in">
         <div class="edu-left">
           <span class="edu-institution">University of Southampton</span>
-          <span class="edu-date">2008 &ndash; 2011</span>
+          <span class="exp-date">2008 &ndash; 2011</span>
           <span class="edu-degree">BSc Information Technology in Organisations</span>
           <span class="edu-grade">First Class Honours</span>
         </div>
         <div class="edu-right">
-          <p class="section-tag" style="margin-bottom:0.8rem;">Dissertation Project</p>
-          <p style="font-family:var(--font-serif);font-size:1.3rem;margin-bottom:0.4rem;">printsnphotos.com</p>
-          <span class="edu-date" style="display:block;margin-bottom:0.8rem;">Sept 2010 – May 2011</span>
+          <div class="exp-meta">
+            <span class="exp-company">printsnphotos.com</span>
+            <span class="exp-role" style="margin-bottom:0.8rem;">Dissertation Project</span>
+            <span class="exp-date" style="display:block;margin-bottom:0.8rem;">Sept 2010 – May 2011</span>
+          </div>
           <ul class="exp-bullets">
-            <li>Built a full-stack gallery website for a private fine art collector as my final year university dissertation project.</li>
-            <li>Handled all phases of the Web Development Lifecycle including requirements gathering, UI/UX design, development, testing, and A/B testing.</li>
-            <li>Commended for clean, user-focused design and end-to-end ownership from brief to delivery.</li>
+            <li>Delivered a full-stack gallery website for a private fine art collector, completing all phases of the software development lifecycle — from requirements gathering and design through development, deployment and A/B testing.</li>
           </ul>
           <img src="/assets/printsnphotos/main.jpg" alt="printsnphotos.com" class="exp-project-img" />
           <div class="exp-stack-tags">
-            <span>PHP</span><span>HTML</span><span>CSS</span><span>jQuery</span><span>SQL</span>
+            <span>PHP</span><span>HTML</span><span>CSS</span><span>jQuery</span><span>SQL</span><span>A/B Testing</span>
           </div>
         </div>
       </div>
