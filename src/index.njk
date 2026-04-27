@@ -892,12 +892,12 @@ layout: layouts/base.njk
   }
 
   @media (max-width: 860px) {
-    .photo-grid { grid-template-columns: repeat(2, 1fr); }
-    .photo-grid .photo-item:first-child { grid-column: 1 / -1; }
-  }
-  @media (max-width: 560px) {
     .photo-grid { grid-template-columns: 1fr; }
-    .photo-grid .photo-item:first-child { grid-column: 1; }
+    .photo-grid .photo-item:first-child,
+    .photo-grid .photo-item:last-child {
+      grid-column: 1;
+      grid-row: auto;
+    }
   }
 
   /* ─── CV ──────────────────────────────────────────────── */
