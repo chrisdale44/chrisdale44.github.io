@@ -1,56 +1,49 @@
 ---
-title: Christopher Dale Portfolio
+title: Vodafone Ready Business — Christopher Dale
 layout: layouts/base.njk
 ---
+{% include "case-study-styles.njk" %}
 
-<div class="flex flex-col items-center text-md bg-white border-none focus:outline-none [box-shadow:rgba(0,_0,_0,_0.3)_0px_1px_4px_-1px] rounded min-w-[340px] overflow-hidden">
-    <div class="bg-[#157] flex align-center justify-center items-center text-center w-full relative">
-        <a href="/" class="text-white absolute left-4 block p-2">
-            {% include "back-button.njk" %}
-        </a>
-        <h1 class="pacifico text-white text-2xl sm:text-4xl p-4">Vodafone: Ready Business</h1>
-    </div>
-    <div class="p-8 flex justify-center text-[#333]">
-        <section>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-8">
-                <div>
-                    <p class="text-sm pb-4">A British telecommunications company, operating in 22 countries across Europe, Asia, Africa and Oceania.</p> 
-                    <!-- <img src="/assets/ready-business/steps.jpg" alt="Ready Business Workflow" class="rounded">
-                    <p class='text-xs text-italic text-[#666] text-center pt-2 italic'>Steps</p> -->
-                    <h2 class="font-bold pb-2 text-lg">Technologies</h2>
-                    <div class="px-4">
-                        <ul class="columns-2 sm:columns-3 gap-4 list-disc text-sm pb-4 pl-4">
-                            <li>Javascript</li>
-                            <li>D3</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
-                            <li>Survey Monkey</li>
-                            <li>Responsive Design</li>
-                        </ul>
-                    </div>
-                    <h2 class="font-bold pb-2 text-lg">Experience</h2>
-                    <div class="px-4 text-sm">
-                        <ul class="list-disc pl-4">
-                            <li>
-                            Led the development of a Web application to promote Vodafone B2B products through a series of business related survey questions followed by a dynamic results page, including data visualisation charts
-                            </li>
-                            <li>
-                            Produced comprehensive documentation and conducted stakeholder training to customise and deploy the tool to their local markets, enabling successful rollout across 20 international Vodafone websites
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div>
-                    <img src="/assets/ready-business/full-report.jpg" alt="Ready Business Full Report" class="rounded">
-                    <p class='text-xs text-italic text-[#666] text-center pt-2 italic'>Ready Business Report</p>
-                </div>
-            </div>
-        </section>
-        <section>
-            <div class="max-w-[480px]">
-                
-            </div>
-        </section>
-    </div>
+<nav class="nav">
+  <a href="/" class="nav-logo">CD</a>
+  <a href="/" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back
+  </a>
+</nav>
 
-</div>
+<section class="cs-hero">
+  <div class="cs-hero-inner">
+    <p class="section-tag fade-in">Case Study</p>
+    <h1 class="cs-title fade-in delay-1">Vodafone<br>Ready Business Project.</h1>
+    <p class="cs-subtitle fade-in delay-2">A B2B web application deployed across 20 international Vodafone markets, driving product discovery through interactive data visualisation.</p>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="cs-inner">
+
+    <div class="cs-content-grid fade-in delay-1">
+      <div>
+        <h2 class="tech-heading">Tech Stack</h2>
+        <div class="tech-tags">
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">jQuery</span>
+          <span class="tech-tag">D3.js</span>
+          <span class="tech-tag">Survey Monkey</span>
+          <span class="tech-tag">Responsive UI</span>
+        </div>
+      </div>
+      <div>
+        <h2 class="tech-heading">Experience</h2>
+        <ul class="cs-bullets">
+          <li>Led the development of a Web application promoting Vodafone B2B products through a series of business survey questions followed by a dynamic results page with data visualisation charts.</li>
+          <li>Produced comprehensive documentation and conducted stakeholder training to customise and deploy the tool across 20 international Vodafone websites.</li>
+        </ul>
+      </div>
+    </div>
+    <img src="/assets/ready-business/full-report.jpg" alt="Ready Business full report" class="cs-image fade-in">
+  </div>
+</section>

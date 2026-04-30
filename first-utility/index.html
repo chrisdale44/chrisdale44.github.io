@@ -3,85 +3,228 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Christopher Dale Portfolio</title>
+    <title>First Utility — Christopher Dale</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Pacifico&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <style>
-      body {
-        font-family: "Inter", sans-serif;
-      }
-
-      .pacifico {
-        font-family: "Pacifico", cursive;
-      }
-
-      .white-bullets {
-        list-style-type: none;
-        padding-left: 1.5rem;
-      }
-      .white-bullets li::before {
-        content: "○";
-        color: #000;
-        display: inline-block;
-        width: 1em;
-        margin-left: -1em;
-      }
+      .pacifico { font-family: 'Pacifico', cursive; }
     </style>
   </head>
-  <body class="bg-gray-50 text-gray-900">
-    <div class="container mx-auto p-4 pb-8 max-w-4xl">
-      
-<div class="flex flex-col items-center text-md bg-white border-none focus:outline-none [box-shadow:rgba(0,_0,_0,_0.3)_0px_1px_4px_-1px] rounded min-w-[340px] overflow-hidden">
-    <div class="bg-[#157] flex align-center justify-center items-center text-center w-full relative">
-        <a href="/" class="text-white absolute left-4 block p-2">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-    <path fill-rule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clip-rule="evenodd" />
-</svg>
+  <body>
+    <style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cream: #F5F1EB;
+    --dark: #0E0E0E;
+    --mid: #2A2A2A;
+    --muted: #7A7A7A;
+    --border: #E0DBD3;
+    --font-serif: 'DM Serif Display', serif;
+    --font-sans: 'Inter', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-sans);
+    background: var(--cream);
+    color: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
 
-        </a>
-        <h1 class="pacifico text-white text-2xl sm:text-4xl p-4">First Utility</h1>
-    </div>
-    <div class="p-8 text-[#333]">
-        <section class="flex justify-center">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-8">
-                <div>
-                    <img src="/assets/first-utility/old.jpg" alt="First Utility Old Website" class="rounded">
-                    <p class='text-xs text-italic text-[#666] text-center pt-2 italic'>Before</p>
-                </div>
-                <div>
-                    <img src="/assets/first-utility/main.jpg" alt="First Utility Rebuilt Website" class="rounded">
-                    <p class='text-xs text-italic text-[#666] text-center pt-2 italic'>After</p>
-                </div>
-            </div>
-        </section>
-        <section class="flex justify-center">
-        <div class="max-w-[560px]">
-            <h2 class="font-bold pb-2 text-lg">Technologies</h2>
-            <div class="px-4">
-                <ul class="columns-2 sm:columns-3 gap-4 list-disc text-sm pb-4 pl-4">
-                    <li>Javascript</li>
-                    <li>jQuery</li>
-                    <li>BackboneJS</li>
-                    <li>Highcharts</li>
-                    <li>D3</li>
-                    <li>HTML</li>
-                    <li>CSS</li>
-                    <li>Bootstrap</li>
-                    <li>Github</li>
-                    <li>Responsive Design</li>
-                </ul>
-            </div>
-            <h2 class="font-bold pb-2 text-lg">Experience</h2>
-            <p class="text-sm">Worked in a cross-functional Agile team to rebuild the First Utility website following a redesign, including converting wireframes into full-responsive web pages and the ownership of data visualisation projects</p>
-        </section>
-    </div>
-</div>
+  /* Nav */
+  .nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.25rem 2.5rem;
+    mix-blend-mode: difference;
+    color: #fff;
+  }
+  .nav-logo { font-family: var(--font-serif); font-size: 1.1rem; }
+  .nav-back {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    opacity: 0.7; transition: opacity 0.2s;
+  }
+  .nav-back:hover { opacity: 1; }
 
+  /* Hero */
+  .cs-hero {
+    background: var(--dark); color: #fff;
+    padding: 10rem 2.5rem 5rem; min-height: 55vh;
+    display: flex; flex-direction: column; justify-content: flex-end;
+  }
+  .cs-hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; }
+  .section-tag {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.18em;
+    text-transform: uppercase; opacity: 0.4; margin-bottom: 1rem;
+  }
+  .cs-title {
+    font-family: var(--font-serif);
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1.0; letter-spacing: -0.02em; margin-bottom: 1rem;
+  }
+  .cs-subtitle {
+    font-size: 1rem; opacity: 0.5; max-width: 500px; line-height: 1.6;
+  }
+
+  /* Content sections */
+  .cs-section { padding: 4rem 2.5rem; }
+  .cs-section:nth-child(even) { background: #fff; }
+  .cs-inner { max-width: 1100px; margin: 0 auto; }
+
+  /* Before/After */
+  .before-after {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 3rem;
+  }
+  .before-after-item img {
+    width: 100%; border-radius: 4px; border: 1px solid var(--border);
+  }
+  .img-label {
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em;
+    text-transform: uppercase; opacity: 0.4; margin-top: 0.6rem; text-align: center;
+  }
+
+  /* Single image */
+  .cs-image { border-radius: 4px; border: 1px solid var(--border); width: 100%; margin-bottom: 3rem; }
+
+  /* Content grid */
+  .cs-content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .cs-content-grid.single { grid-template-columns: 1fr; max-width: 720px; }
+
+  /* Tech tags */
+  .tech-heading {
+    font-family: var(--font-serif); font-size: 1.4rem;
+    margin-bottom: 1.2rem; letter-spacing: -0.01em;
+  }
+  .tech-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+  .tech-tag {
+    font-size: 0.72rem; font-weight: 500; letter-spacing: 0.04em;
+    border: 1px solid var(--border); border-radius: 100px;
+    padding: 0.38rem 0.85rem; color: var(--mid);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .tech-tag:hover { border-color: var(--dark); color: var(--dark); }
+
+  /* Bullets */
+  .cs-bullets { list-style: none; padding: 0; }
+  .cs-bullets li {
+    font-size: 0.9rem; line-height: 1.65; color: var(--mid);
+    padding: 0.75rem 0; border-bottom: 1px solid var(--border);
+    padding-left: 1.2rem; position: relative;
+  }
+  .cs-bullets li::before {
+    content: ''; position: absolute; left: 0; top: 1.1rem;
+    width: 5px; height: 5px; border-radius: 50%; background: var(--muted);
+  }
+  .cs-bullets li:last-child { border-bottom: none; }
+
+  /* Description text */
+  .cs-desc { font-size: 0.95rem; line-height: 1.7; color: var(--mid); }
+  .cs-desc + .cs-desc { margin-top: 1rem; }
+
+  /* CTA */
+  .cs-cta {
+    margin-top: 2rem;
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    padding: 0.9rem 1.8rem; background: var(--dark); color: #fff;
+    font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    border-radius: 2px; transition: opacity 0.2s;
+  }
+  .cs-cta:hover { opacity: 0.8; }
+
+  /* Divider */
+  .cs-divider { border: none; border-top: 1px solid var(--border); margin: 2.5rem 0; }
+
+  /* Fade-in */
+  .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .fade-in.visible { opacity: 1; transform: none; }
+  .delay-1 { transition-delay: 0.12s; }
+  .delay-2 { transition-delay: 0.24s; }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav { padding: 1rem 1.2rem; }
+    .cs-hero { padding: 8rem 1.2rem 3rem; }
+    .cs-section { padding: 2.5rem 1.2rem; }
+    .before-after { grid-template-columns: 1fr; }
+    .cs-content-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const fadeEls = document.querySelectorAll('.fade-in');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
+  });
+</script>
+
+
+<nav class="nav">
+  <a href="/" class="nav-logo">CD</a>
+  <a href="/" class="nav-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back
+  </a>
+</nav>
+
+<section class="cs-hero">
+  <div class="cs-hero-inner">
+    <p class="section-tag fade-in">Case Study</p>
+    <h1 class="cs-title fade-in delay-1">First Utility.</h1>
+    <p class="cs-subtitle fade-in delay-2">Rebuilding the First Utility website following a full redesign &mdash; responsive pages and data visualisation ownership.</p>
+  </div>
+</section>
+
+<section class="cs-section">
+  <div class="cs-inner">
+    <div class="before-after fade-in">
+      <div class="before-after-item">
+        <img src="/assets/first-utility/old.jpg" alt="First Utility website before">
+        <p class="img-label">Before</p>
+      </div>
+      <div class="before-after-item">
+        <img src="/assets/first-utility/main.jpg" alt="First Utility website after">
+        <p class="img-label">After</p>
+      </div>
     </div>
+    <div class="cs-content-grid fade-in delay-1">
+      <div>
+        <h2 class="tech-heading">Tech Stack</h2>
+        <div class="tech-tags">
+          <span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">jQuery</span>
+          <span class="tech-tag">Backbone.js</span>
+          <span class="tech-tag">Highcharts</span>
+          <span class="tech-tag">D3.js</span>
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">Bootstrap</span>
+          <span class="tech-tag">GitHub</span>
+          <span class="tech-tag">Responsive Design</span>
+        </div>
+      </div>
+      <div>
+        <h2 class="tech-heading">Experience</h2>
+        <ul class="cs-bullets">
+          <li>Worked in a cross-functional Agile team to rebuild the First Utility website following a full redesign.</li>
+          <li>Converted wireframes into fully responsive web pages and took ownership of data visualisation projects.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
   </body>
 </html>
